@@ -1,0 +1,1549 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- EDIT -->
+  <title>xPathZero: Complete SBTi Platform - Enterprise Dashboard & 19-Agent AI System</title>
+  <meta name="description" content="Transform SBTi implementation with comprehensive platform featuring enterprise dashboard and 19 specialized AI agents">
+  
+  <!-- URL CANONICAL -->
+  <link rel="canonical" href="https://xpathzero.vercel.app/">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+  
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS for xPathZero branding and presentation -->
+  <style>
+    /* xPathZero Brand Colors */
+    :root {
+      --xpz-teal: #14b8a6;
+      --xpz-teal-dark: #0f766e;
+      --xpz-teal-light: #5eead4;
+      --xpz-gray: #374151;
+      --xpz-gray-light: #f3f4f6;
+      --xpz-blue: #3b82f6;
+      --xpz-green: #10b981;
+      --xpz-amber: #f59e0b;
+    }
+
+    /* Enhanced animations and transitions */
+    .slide-animate {
+      animation: slideInUp 0.8s ease-out;
+    }
+    
+    .slide-animate-delayed {
+      animation: slideInUp 0.8s ease-out 0.3s both;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Audience Navigation */
+    .audience-nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .audience-toggle {
+      padding: 8px 16px;
+      margin: 0 4px;
+      border: 2px solid var(--xpz-teal);
+      background: white;
+      color: var(--xpz-teal);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .audience-toggle.active {
+      background: var(--xpz-teal);
+      color: white;
+    }
+
+    /* Interactive elements */
+    .interactive-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .interactive-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(20, 184, 166, 0.2);
+    }
+    
+    /* Enhanced metric displays */
+    .metric-highlight {
+      background: linear-gradient(135deg, var(--xpz-teal) 0%, var(--xpz-teal-dark) 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      margin: 1rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-highlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .metric-number {
+      font-size: 3rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-small .metric-number {
+      font-size: 2rem;
+    }
+    
+    /* Agent showcase styles */
+    .agent-tier {
+      background: rgba(255,255,255,0.95);
+      border-left: 4px solid var(--xpz-teal);
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .agent-tier:hover {
+      transform: translateX(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .agent-tier.tier-0 { border-left-color: #ef4444; }
+    .agent-tier.tier-1 { border-left-color: var(--xpz-teal); }
+    .agent-tier.tier-2 { border-left-color: var(--xpz-blue); }
+    .agent-tier.tier-3 { border-left-color: var(--xpz-green); }
+    
+    /* Chart container */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Dashboard mockup styles */
+    .dashboard-mockup {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      margin: 20px 0;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .dashboard-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .metric-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .metric-card .value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--xpz-teal);
+      margin-bottom: 5px;
+    }
+
+    .metric-card .label {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* Discord bot simulation */
+    .discord-mockup {
+      background: #36393f;
+      border-radius: 12px;
+      padding: 20px;
+      color: #dcddde;
+      font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .discord-message {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: flex-start;
+    }
+
+    .discord-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .discord-content {
+      flex: 1;
+    }
+
+    .discord-username {
+      font-weight: 500;
+      color: #7289da;
+      margin-bottom: 2px;
+    }
+
+    .discord-text {
+      color: #dcddde;
+    }
+
+    .discord-bot-tag {
+      background: #5865f2;
+      color: white;
+      font-size: 10px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+
+    /* SBTi sector colors */
+    .sector-power { color: #f59e0b; }
+    .sector-steel { color: #6b7280; }
+    .sector-cement { color: #78716c; }
+    .sector-buildings { color: #10b981; }
+    .sector-transport { color: #3b82f6; }
+    .sector-apparel { color: #ec4899; }
+    .sector-flag { color: #22c55e; }
+    .sector-ict { color: #8b5cf6; }
+    .sector-finance { color: #06b6d4; }
+    .sector-chemicals { color: #ef4444; }
+    .sector-aviation { color: #0ea5e9; }
+    .sector-maritime { color: #0891b2; }
+    .sector-oilgas { color: #1f2937; }
+
+    /* Investment focus content */
+    .investor-content {
+      display: none;
+    }
+
+    .investor-mode .investor-content {
+      display: block;
+    }
+
+    .investor-mode .user-content {
+      display: none;
+    }
+
+    /* ROI visualization */
+    .roi-showcase {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .cost-savings {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .cost-item {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .cost-item .before {
+      color: #dc2626;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .cost-item .after {
+      color: var(--xpz-green);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .cost-item .savings {
+      color: var(--xpz-teal);
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* Technology showcase */
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .tech-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: var(--xpz-teal);
+    }
+
+    /* Progress indicators */
+    .progress-bar {
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      margin: 15px 0;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, var(--xpz-teal), var(--xpz-green));
+      height: 100%;
+      transition: width 2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Animated counters */
+    .counter {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--xpz-teal);
+    }
+
+    /* Floating elements */
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Section backgrounds */
+    .bg-xpz-teal {
+      background: linear-gradient(135deg, var(--xpz-teal) 0%, var(--xpz-teal-dark) 100%);
+    }
+
+    .bg-xpz-gradient {
+      background: linear-gradient(135deg, var(--xpz-teal) 0%, var(--xpz-blue) 50%, var(--xpz-green) 100%);
+    }
+
+    /* Custom slide classes */
+    .slide-dashboard {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+
+    .slide-agents {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white;
+    }
+
+    .slide-market {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .audience-nav {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .dashboard-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-number {
+        font-size: 2rem;
+      }
+
+      .cost-savings {
+        flex-direction: column;
+      }
+
+      .tech-stack {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+
+  <!-- SOCIAL CARDS -->
+  <meta property="og:url" content="https://xpathzero.vercel.app/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="xPathZero: Complete SBTi Platform" />
+  <meta property="og:description" content="Transform SBTi implementation with comprehensive platform featuring enterprise dashboard and 19 specialized AI agents">
+  <meta property="og:image" content="static/images/share-webslides.jpg" >
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="xPathZero: Complete SBTi Platform">
+  <meta name="twitter:description" content="Transform SBTi implementation with comprehensive platform featuring enterprise dashboard and 19 specialized AI agents">
+  <meta name="twitter:image" content="static/images/share-webslides.jpg">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+
+</head>
+
+<body>
+  <!-- Audience Navigation -->
+  <div class="audience-nav">
+    <button class="audience-toggle active" id="user-toggle">Users</button>
+    <button class="audience-toggle" id="investor-toggle">Investors</button>
+  </div>
+
+  <main role="main">
+    <article id="webslides" class="vertical">
+
+      <!-- SLIDE 1: Title & Vision -->
+      <section class="bg-xpz-gradient aligncenter">
+        <div class="wrap">
+          <h1 class="text-landing slide-animate">
+            <strong>xPathZero</strong>
+          </h1>
+          <p class="text-intro slide-animate-delayed">
+            Complete SBTi Implementation Platform
+            <br>
+            <span class="user-content">Turn commitments into concrete decarbonization actions</span>
+            <span class="investor-content">$45M market opportunity with 78.5% SBTi alignment rate</span>
+          </p>
+          <div class="slide-animate-delayed">
+            <div class="user-content">
+              <p class="text-subtitle">Enterprise Dashboard + 19 AI Agents + Real-World Analytics</p>
+            </div>
+            <div class="investor-content">
+              <div class="cost-savings">
+                <div class="cost-item">
+                  <div class="before">2 weeks</div>
+                  <div>→</div>
+                  <div class="after">2 hours</div>
+                  <div class="savings">95% time reduction</div>
+                </div>
+                <div class="cost-item">
+                  <div class="before">$50K</div>
+                  <div>→</div>
+                  <div class="after">$2K</div>
+                  <div class="savings">96% cost reduction</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: Platform Overview -->
+      <section class="slide-dashboard">
+        <div class="wrap">
+          <h2 class="slide-animate">Complete Platform Architecture</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="dashboard-mockup slide-animate">
+                <div class="dashboard-header">
+                  <h3>Enterprise Dashboard</h3>
+                  <span class="material-icons-outlined">dashboard</span>
+                </div>
+                <div class="dashboard-metrics">
+                  <div class="metric-card">
+                    <div class="value">47</div>
+                    <div class="label">Companies</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="value">156</div>
+                    <div class="label">Strategies</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="value">2.8M</div>
+                    <div class="label">CO₂ Reduced</div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="value">$45M</div>
+                    <div class="label">Investment</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="discord-mockup slide-animate-delayed">
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #5865f2; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">🎯</div>
+                  <div class="discord-content">
+                    <div class="discord-username">SBTi Router <span class="discord-bot-tag">BOT</span></div>
+                    <div class="discord-text">Welcome! Let me analyze your company and route you to the right sector expert...</div>
+                  </div>
+                </div>
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #f59e0b; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">⚡</div>
+                  <div class="discord-content">
+                    <div class="discord-username">Power Expert <span class="discord-bot-tag">BOT</span></div>
+                    <div class="discord-text">I specialize in power sector decarbonization. Based on your utility operations, here's your customized SBTi roadmap...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-content">
+            <p class="text-subtitle">Two powerful interfaces working together</p>
+          </div>
+          <div class="investor-content">
+            <p class="text-subtitle">Dual revenue streams: SaaS platform + AI consultation services</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: Market Problem & Opportunity -->
+      <section class="slide-market">
+        <div class="wrap">
+          <h2 class="slide-animate">The SBTi Implementation Challenge</h2>
+          <div class="flexblock metrics">
+            <div class="slide-animate">
+              <span class="counter" data-target="4000">0</span>
+              <h3>Companies committed to SBTi</h3>
+              <p>Growing 30% annually</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span class="counter" data-target="78">0</span>%
+              <h3 class="investor-content">Struggle with implementation</h3>
+              <h3 class="user-content">Need implementation guidance</h3>
+              <p>Complexity barriers persist</p>
+            </div>
+            <div class="slide-animate">
+              <span class="counter" data-target="50000">0</span>$
+              <h3>Average consulting cost</h3>
+              <p class="investor-content">Per company engagement</p>
+              <p class="user-content">Traditional approach</p>
+            </div>
+          </div>
+          <div class="investor-content">
+            <div class="roi-showcase slide-animate">
+              <h3>Market Opportunity</h3>
+              <div class="flexblock metrics">
+                <div>
+                  <span>$2.1B</span>
+                  <h4>Addressable Market</h4>
+                </div>
+                <div>
+                  <span>300%</span>
+                  <h4>YoY Growth Rate</h4>
+                </div>
+                <div>
+                  <span>$45M</span>
+                  <h4>Platform Value</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Enterprise Dashboard Deep Dive -->
+      <section class="slide-dashboard">
+        <div class="wrap">
+          <h2 class="slide-animate">Enterprise Dashboard: Complete SBTi Intelligence</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="slide-animate">
+                <h3>📊 Real-Time Analytics</h3>
+                <ul>
+                  <li><strong>Company Tracking:</strong> 47 companies across 8 sectors</li>
+                  <li><strong>Strategy Management:</strong> 156 active mitigation strategies</li>
+                  <li><strong>Impact Metrics:</strong> 2.8M tonnes CO₂ reduced</li>
+                  <li><strong>Investment Tracking:</strong> $45M in climate finance</li>
+                </ul>
+              </div>
+              <div class="slide-animate-delayed">
+                <h3>🎯 SBTi Compliance</h3>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 78.5%">78.5% Aligned</div>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65.2%">65.2% Mature Strategies</div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="chart-container slide-animate">
+                <canvas id="sectorChart" width="400" height="200"></canvas>
+              </div>
+              <div class="user-content">
+                <p><strong>Peer Benchmarking:</strong> Compare your performance against sector leaders</p>
+              </div>
+              <div class="investor-content">
+                <p><strong>Data Monetization:</strong> Premium analytics drive 40% revenue uplift</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: 19-Agent AI System Overview -->
+      <section class="slide-agents">
+        <div class="wrap">
+          <h2 class="slide-animate">19-Agent AI Consultation System</h2>
+          <div class="flexblock features">
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">🎯</span>
+              <h3>Tier 0: Router</h3>
+              <p><strong>SBTi Router Agent</strong><br>Intelligent company analysis and expert routing</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span style="font-size: 4rem;">🏭</span>
+              <h3>Tier 1: 13 Sector Experts</h3>
+              <p>Power, Steel, Cement, Buildings, Transport, Apparel, FLAG, ICT, Finance, Chemicals, Aviation, Maritime, Oil & Gas</p>
+            </div>
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">📊</span>
+              <h3>Tier 2: 3 Strategy Analysts</h3>
+              <p>Mitigation Analysis, Cost Strategy, Regional Compliance</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span style="font-size: 4rem;">🔬</span>
+              <h3>Tier 3: 3 Innovation Agents</h3>
+              <p>Technology Scouting, Innovation Evaluation, Horizon Scanning</p>
+            </div>
+          </div>
+          <div class="user-content">
+            <p class="text-subtitle">Complete SBTi expertise at your fingertips via Discord</p>
+          </div>
+          <div class="investor-content">
+            <p class="text-subtitle">Scalable AI consultation model: 19 agents serve unlimited clients</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Sector Experts Showcase -->
+      <section class="bg-white">
+        <div class="wrap">
+          <h2 class="slide-animate">13 Specialized Sector Experts</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>⚡ Power Expert</h4>
+                <p>Renewable energy transitions, grid decarbonization, utility-scale pathways</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🏭 Steel Expert</h4>
+                <p>Hydrogen production, electric arc furnaces, circular economy approaches</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🏗️ Cement Expert</h4>
+                <p>Process improvements, carbon capture, novel cement chemistries</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🏢 Buildings Expert</h4>
+                <p>Energy efficiency, electrification, embodied carbon reduction</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🚛 Transport Expert</h4>
+                <p>Fleet electrification, alternative fuels, logistics optimization</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>👔 Apparel Expert</h4>
+                <p>Supply chain decarbonization, sustainable materials, circular fashion</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🌾 FLAG Expert</h4>
+                <p>Regenerative agriculture, forest conservation, nature-based solutions</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>💻 ICT Expert</h4>
+                <p>Data center efficiency, digital solutions, semiconductor sustainability</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🏦 Finance Expert</h4>
+                <p>Climate finance, sustainable investing, portfolio decarbonization</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🧪 Chemicals Expert</h4>
+                <p>Green chemistry, bio-based materials, process efficiency</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>✈️ Aviation Expert</h4>
+                <p>Sustainable aviation fuels, operational efficiency, fleet management</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🚢 Maritime Expert</h4>
+                <p>Alternative fuels, energy efficiency, operational optimization</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>🛢️ Oil & Gas Expert</h4>
+                <p>Methane reduction, carbon capture, renewable energy transition</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Discord Bot in Action -->
+      <section class="slide-agents">
+        <div class="wrap">
+          <h2 class="slide-animate">AI Agents in Action: Live Consultation</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="discord-mockup slide-animate" style="height: 500px;">
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #5865f2; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">👤</div>
+                  <div class="discord-content">
+                    <div class="discord-username">Steel Corp User</div>
+                    <div class="discord-text">/sbti_start - We're a mid-sized steel manufacturer looking to set science-based targets</div>
+                  </div>
+                </div>
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #ef4444; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">🎯</div>
+                  <div class="discord-content">
+                    <div class="discord-username">SBTi Router <span class="discord-bot-tag">BOT</span></div>
+                    <div class="discord-text">Excellent! I'm analyzing your steel manufacturing profile. Based on your sector and operations, I'm connecting you with our Steel Expert and Cost Strategist...</div>
+                  </div>
+                </div>
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #6b7280; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">🏭</div>
+                  <div class="discord-content">
+                    <div class="discord-username">Steel Expert <span class="discord-bot-tag">BOT</span></div>
+                    <div class="discord-text">Welcome to SBTi steel sector guidance! For your operations, I recommend focusing on:
+                    1. Electric arc furnace transition (85% CO₂ reduction potential)
+                    2. Hydrogen-based direct reduction (90% reduction by 2030)
+                    3. Scrap steel circular economy integration
+
+                    Let me connect you with our Cost Strategist for financial analysis...</div>
+                  </div>
+                </div>
+                <div class="discord-message">
+                  <div class="discord-avatar" style="background: #f59e0b; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">💰</div>
+                  <div class="discord-content">
+                    <div class="discord-username">Cost Strategist <span class="discord-bot-tag">BOT</span></div>
+                    <div class="discord-text">Based on steel sector benchmarks:
+                    • EAF transition: $15M CAPEX, 3-year payback
+                    • Hydrogen DRI: $45M investment, 7-year ROI
+                    • Carbon cost avoidance: $2.1M annually
+
+                    Would you like detailed implementation roadmap?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="slide-animate-delayed">
+                <h3 class="user-content">🚀 Complete Consultation Flow</h3>
+                <h3 class="investor-content">💼 Scalable Service Model</h3>
+                <ul>
+                  <li class="user-content"><strong>Intelligent Routing:</strong> Right expert, every time</li>
+                  <li class="user-content"><strong>Multi-Agent Collaboration:</strong> Comprehensive analysis</li>
+                  <li class="user-content"><strong>Real-Time Guidance:</strong> Instant expert responses</li>
+                  <li class="user-content"><strong>Implementation Roadmaps:</strong> Step-by-step plans</li>
+                  
+                  <li class="investor-content"><strong>Unlimited Consultations:</strong> Fixed AI infrastructure costs</li>
+                  <li class="investor-content"><strong>Premium Service Tier:</strong> $5K/month per company</li>
+                  <li class="investor-content"><strong>Scalability:</strong> 1000+ concurrent consultations</li>
+                  <li class="investor-content"><strong>Quality Consistency:</strong> Standardized expertise</li>
+                </ul>
+              </div>
+              <div class="metric-highlight slide-animate">
+                <span class="metric-number user-content">24/7</span>
+                <span class="metric-number investor-content">$5K</span>
+                <p class="user-content">Expert Availability</p>
+                <p class="investor-content">Monthly Revenue per Client</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Technology Stack & Innovation -->
+      <section class="bg-white">
+        <div class="wrap">
+          <h2 class="slide-animate">Advanced Technology Foundation</h2>
+          <div class="tech-stack slide-animate">
+            <div class="tech-item">
+              <div class="tech-icon">⚛️</div>
+              <h4>Next.js 15</h4>
+              <p>Modern React framework</p>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🐍</div>
+              <h4>FastAPI</h4>
+              <p>High-performance Python</p>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🤖</div>
+              <h4>CrewAI</h4>
+              <p>Multi-agent orchestration</p>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">🗄️</div>
+              <h4>PostgreSQL</h4>
+              <p>Enterprise database</p>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">💬</div>
+              <h4>Discord API</h4>
+              <p>User interface platform</p>
+            </div>
+            <div class="tech-item">
+              <div class="tech-icon">☁️</div>
+              <h4>Cloud Deploy</h4>
+              <p>Vercel + Render</p>
+            </div>
+          </div>
+          
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="slide-animate">
+                <h3 class="user-content">🎯 Key Innovation Features</h3>
+                <h3 class="investor-content">💡 Competitive Advantages</h3>
+                <ul>
+                  <li class="user-content"><strong>Sector-Specific RAG:</strong> Authoritative SBTi knowledge per expert</li>
+                  <li class="user-content"><strong>Real-World Analytics:</strong> Peer benchmarking data</li>
+                  <li class="user-content"><strong>Implementation Tracking:</strong> From target to action</li>
+                  <li class="user-content"><strong>Cost Analysis:</strong> ROI-focused recommendations</li>
+                  
+                  <li class="investor-content"><strong>Proprietary Database:</strong> 156 mitigation strategies across 13 sectors</li>
+                  <li class="investor-content"><strong>AI Moat:</strong> Specialized agent training on SBTi guidelines</li>
+                  <li class="investor-content"><strong>Network Effects:</strong> More users = better benchmarking</li>
+                  <li class="investor-content"><strong>High Switching Costs:</strong> Integrated workflows and data</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div class="metric-highlight slide-animate">
+                <span class="metric-number">89</span>
+                <p>Peer Benchmarks Available</p>
+              </div>
+              <div class="metric-highlight slide-animate-delayed">
+                <span class="metric-number investor-content">95%</span>
+                <span class="metric-number user-content">TRL 9</span>
+                <p class="investor-content">Cost Reduction vs Traditional</p>
+                <p class="user-content">Technology Readiness</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Business Model & Revenue Streams -->
+      <section class="slide-market investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate">Revenue Model & Market Strategy</h2>
+          <div class="flexblock metrics">
+            <div class="slide-animate">
+              <span>$299</span>
+              <h3>Platform Basic</h3>
+              <p>Dashboard + Analytics<br>Per company/month</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span>$5,000</span>
+              <h3>AI Consultation</h3>
+              <p>19-Agent Discord Access<br>Premium tier/month</p>
+            </div>
+            <div class="slide-animate">
+              <span>$25,000</span>
+              <h3>Enterprise</h3>
+              <p>White-label deployment<br>Annual contracts</p>
+            </div>
+          </div>
+          
+          <div class="roi-showcase slide-animate">
+            <h3>Financial Projections (Year 3)</h3>
+            <div class="flexblock metrics">
+              <div>
+                <span>$12M</span>
+                <h4>Annual Recurring Revenue</h4>
+                <p>Platform subscriptions</p>
+              </div>
+              <div>
+                <span>$18M</span>
+                <h4>AI Consultation Revenue</h4>
+                <p>Premium services</p>
+              </div>
+              <div>
+                <span>$15M</span>
+                <h4>Enterprise Contracts</h4>
+                <p>B2B partnerships</p>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%">85% Gross Margin</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Implementation Results & ROI -->
+      <section class="bg-xpz-gradient">
+        <div class="wrap">
+          <h2 class="slide-animate text-landing">Proven Results</h2>
+          <div class="flexblock metrics">
+            <div class="slide-animate">
+              <span class="counter" data-target="96">0</span>%
+              <h3 class="user-content">Time Reduction</h3>
+              <h3 class="investor-content">Cost Savings</h3>
+              <p class="user-content">2 weeks → 2 hours</p>
+              <p class="investor-content">$50K → $2K per engagement</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span class="counter" data-target="78">0</span>%
+              <h3>SBTi Alignment Rate</h3>
+              <p class="user-content">vs 45% industry average</p>
+              <p class="investor-content">Higher success = retention</p>
+            </div>
+            <div class="slide-animate">
+              <span class="counter" data-target="156">0</span>
+              <h3>Active Strategies</h3>
+              <p class="user-content">Comprehensive database</p>
+              <p class="investor-content">Proprietary IP asset</p>
+            </div>
+          </div>
+
+          <div class="grid vertical-align">
+            <div class="column user-content">
+              <div class="slide-animate">
+                <h3>🎯 User Success Stories</h3>
+                <blockquote>
+                  <p>"xPathZero transformed our SBTi journey from overwhelming to achievable. The AI agents provided sector-specific guidance that would have cost us $50K in consulting fees."</p>
+                  <cite>- Manufacturing Director, Steel Corp</cite>
+                </blockquote>
+              </div>
+            </div>
+            <div class="column investor-content">
+              <div class="slide-animate">
+                <h3>📈 Investor Highlights</h3>
+                <ul>
+                  <li><strong>Market Timing:</strong> SBTi adoption accelerating 300% YoY</li>
+                  <li><strong>Scalable Model:</strong> AI infrastructure serves unlimited users</li>
+                  <li><strong>Defensible Moat:</strong> Proprietary sector expertise</li>
+                  <li><strong>Network Effects:</strong> Value increases with user base</li>
+                  <li><strong>Exit Strategy:</strong> Strategic acquisition by sustainability leaders</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: Market Validation & Traction -->
+      <section class="slide-market investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate">Market Validation & Growth</h2>
+          
+          <div class="flexblock features">
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">📈</span>
+              <h3>Proven Demand</h3>
+              <ul>
+                <li>4,000+ SBTi committed companies</li>
+                <li>30% annual growth rate</li>
+                <li>78% struggle with implementation</li>
+                <li>$2.1B addressable market</li>
+              </ul>
+            </div>
+            <div class="slide-animate-delayed">
+              <span style="font-size: 4rem;">🤝</span>
+              <h3>Strategic Partnerships</h3>
+              <ul>
+                <li>SBTi guidance integration</li>
+                <li>Climate consulting firms</li>
+                <li>Enterprise sustainability teams</li>
+                <li>Carbon accounting platforms</li>
+              </ul>
+            </div>
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">🎯</span>
+              <h3>Go-to-Market</h3>
+              <ul>
+                <li>Direct enterprise sales</li>
+                <li>Partner channel strategy</li>
+                <li>Freemium Discord access</li>
+                <li>Content marketing leadership</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chart-container slide-animate">
+            <canvas id="growthChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: Competitive Landscape -->
+      <section class="bg-white investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate">Competitive Positioning</h2>
+          
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>🏆 Our Advantages</h3>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>AI-First Approach</h4>
+                <p>19 specialized agents vs general consulting</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>Sector Specialization</h4>
+                <p>Deep expertise across 13 SBTi sectors</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>Real-World Data</h4>
+                <p>Peer benchmarking + implementation analytics</p>
+              </div>
+              <div class="agent-tier tier-1 slide-animate">
+                <h4>Cost Innovation</h4>
+                <p>96% cost reduction vs traditional consulting</p>
+              </div>
+            </div>
+            <div class="column">
+              <h3>🎯 Market Differentiation</h3>
+              <div class="flexblock specs">
+                <div class="slide-animate">
+                  <h4>Traditional Consulting</h4>
+                  <ul>
+                    <li>$50K+ per engagement</li>
+                    <li>2-4 week timeline</li>
+                    <li>Generic approaches</li>
+                    <li>Limited availability</li>
+                  </ul>
+                </div>
+                <div class="slide-animate-delayed">
+                  <h4>xPathZero Platform</h4>
+                  <ul>
+                    <li>$2K implementation cost</li>
+                    <li>2 hour turnaround</li>
+                    <li>Sector-specific guidance</li>
+                    <li>24/7 AI availability</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roi-showcase slide-animate">
+            <h3>Competitive Moats</h3>
+            <div class="cost-savings">
+              <div class="cost-item">
+                <h4>Data Network Effects</h4>
+                <p>More users = better benchmarking = higher value</p>
+              </div>
+              <div class="cost-item">
+                <h4>AI Training Advantage</h4>
+                <p>Proprietary SBTi expertise fine-tuning</p>
+              </div>
+              <div class="cost-item">
+                <h4>Integration Lock-in</h4>
+                <p>Workflow integration increases switching costs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Team & Execution -->
+      <section class="slide-agents investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate">Team & Execution Capability</h2>
+          
+          <div class="flexblock features">
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">🧠</span>
+              <h3>Technical Leadership</h3>
+              <ul>
+                <li>Full-stack platform development</li>
+                <li>AI/ML specialization</li>
+                <li>Enterprise SaaS experience</li>
+                <li>Climate tech domain knowledge</li>
+              </ul>
+            </div>
+            <div class="slide-animate-delayed">
+              <span style="font-size: 4rem;">🎯</span>
+              <h3>Domain Expertise</h3>
+              <ul>
+                <li>SBTi guidance integration</li>
+                <li>Sustainability consulting background</li>
+                <li>Multi-agent system design</li>
+                <li>Enterprise customer success</li>
+              </ul>
+            </div>
+            <div class="slide-animate">
+              <span style="font-size: 4rem;">🚀</span>
+              <h3>Execution Track Record</h3>
+              <ul>
+                <li>Platform MVP delivered</li>
+                <li>19-agent system operational</li>
+                <li>Enterprise customers onboarded</li>
+                <li>Scalable infrastructure deployed</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>Development Roadmap</h3>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%">Q1: Platform MVP ✓</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%">Q2: AI Agents System ✓</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%">Q3: Enterprise Features</div>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 30%">Q4: Strategic Partnerships</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="metric-highlight slide-animate">
+                <span class="metric-number">18</span>
+                <p>Months to Market Leadership</p>
+              </div>
+              <div class="metric-highlight slide-animate-delayed">
+                <span class="metric-number">$5M</span>
+                <p>Series A Target</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 14: Financial Projections -->
+      <section class="slide-market investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate">Financial Projections & Unit Economics</h2>
+          
+          <div class="chart-container slide-animate">
+            <canvas id="revenueChart" width="400" height="250"></canvas>
+          </div>
+
+          <div class="flexblock metrics">
+            <div class="slide-animate">
+              <span>$45M</span>
+              <h3>Year 3 Revenue</h3>
+              <p>Mixed model: Platform + AI services</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span>85%</span>
+              <h3>Gross Margin</h3>
+              <p>AI-first model scales efficiently</p>
+            </div>
+            <div class="slide-animate">
+              <span>$2,100</span>
+              <h3>Customer LTV</h3>
+              <p>Annual contracts + expansion revenue</p>
+            </div>
+          </div>
+
+          <div class="roi-showcase slide-animate">
+            <h3>Unit Economics</h3>
+            <div class="cost-savings">
+              <div class="cost-item">
+                <div class="label">Customer Acquisition Cost</div>
+                <div class="after">$250</div>
+                <div class="savings">8.4x LTV/CAC ratio</div>
+              </div>
+              <div class="cost-item">
+                <div class="label">Monthly Churn Rate</div>
+                <div class="after">3.2%</div>
+                <div class="savings">High retention</div>
+              </div>
+              <div class="cost-item">
+                <div class="label">Payback Period</div>
+                <div class="after">4 months</div>
+                <div class="savings">Fast capital recovery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 15: Investment Opportunity -->
+      <section class="bg-xpz-gradient investor-content">
+        <div class="wrap">
+          <h2 class="slide-animate text-landing">Investment Opportunity</h2>
+          
+          <div class="flexblock metrics">
+            <div class="slide-animate">
+              <span>$5M</span>
+              <h3>Series A Round</h3>
+              <p>18-month runway to profitability</p>
+            </div>
+            <div class="slide-animate-delayed">
+              <span>25%</span>
+              <h3>Equity Offering</h3>
+              <p>Strategic investor participation</p>
+            </div>
+            <div class="slide-animate">
+              <span>$200M</span>
+              <h3>Exit Valuation</h3>
+              <p>Strategic acquisition target</p>
+            </div>
+          </div>
+
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>Use of Funds</h3>
+              <ul class="slide-animate">
+                <li><strong>40% Engineering:</strong> Platform scaling + AI enhancement</li>
+                <li><strong>30% Sales & Marketing:</strong> Customer acquisition</li>
+                <li><strong>20% Operations:</strong> Customer success + partnerships</li>
+                <li><strong>10% R&D:</strong> Advanced features + innovation</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Strategic Acquirer Profile</h3>
+              <ul class="slide-animate-delayed">
+                <li><strong>Sustainability Platforms:</strong> Comprehensive ESG suites</li>
+                <li><strong>Consulting Giants:</strong> Digital transformation</li>
+                <li><strong>Enterprise Software:</strong> Climate module expansion</li>
+                <li><strong>Carbon Accounting:</strong> Implementation capabilities</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roi-showcase slide-animate">
+            <h3>Investment Highlights</h3>
+            <div class="flexblock metrics metric-small">
+              <div>
+                <span class="metric-number">10x</span>
+                <h4>ROI Potential</h4>
+                <p>Based on comparable exits</p>
+              </div>
+              <div>
+                <span class="metric-number">18mo</span>
+                <h4>Path to Profitability</h4>
+                <p>Clear revenue model</p>
+              </div>
+              <div>
+                <span class="metric-number">$2.1B</span>
+                <h4>TAM Growth</h4>
+                <p>Expanding market opportunity</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 16: Call to Action -->
+      <section class="bg-xpz-teal aligncenter">
+        <div class="wrap">
+          <h1 class="text-landing slide-animate">
+            <strong>Transform SBTi Implementation</strong>
+          </h1>
+          <p class="text-intro slide-animate-delayed">
+            <span class="user-content">Experience the future of science-based targets</span>
+            <span class="investor-content">Join the climate tech revolution</span>
+          </p>
+          
+          <div class="slide-animate-delayed">
+            <div class="user-content">
+              <div class="flexblock metrics">
+                <div>
+                  <h3>🚀 Try the Platform</h3>
+                  <p><strong>xpathzero.vercel.app</strong><br>Enterprise dashboard demo</p>
+                </div>
+                <div>
+                  <h3>🤖 Chat with AI Agents</h3>
+                  <p><strong>Discord Bot Invitation</strong><br>19 specialized experts</p>
+                </div>
+                <div>
+                  <h3>📊 See Real Results</h3>
+                  <p><strong>Live Analytics</strong><br>156 active strategies</p>
+                </div>
+              </div>
+              <p class="text-subtitle">Ready to accelerate your SBTi journey?</p>
+            </div>
+            
+            <div class="investor-content">
+              <div class="flexblock metrics">
+                <div>
+                  <h3>💼 Investment Deck</h3>
+                  <p><strong>Full Financial Model</strong><br>Detailed projections</p>
+                </div>
+                <div>
+                  <h3>🎯 Market Analysis</h3>
+                  <p><strong>Competitive Intelligence</strong><br>Strategic positioning</p>
+                </div>
+                <div>
+                  <h3>🤝 Partnership Discussion</h3>
+                  <p><strong>Strategic Collaboration</strong><br>Growth acceleration</p>
+                </div>
+              </div>
+              <p class="text-subtitle">Ready to lead the climate tech transformation?</p>
+            </div>
+          </div>
+
+          <div class="slide-animate" style="margin-top: 3rem;">
+            <p style="font-size: 1.2rem; opacity: 0.9;">
+              <strong>Contact:</strong> hello@xpathzero.com
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Load WebSlides -->
+  <script src="static/js/webslides.js"></script>
+  <script>
+    window.ws = new WebSlides();
+  </script>
+
+  <!-- Custom JavaScript for interactive elements -->
+  <script>
+    // Audience toggle functionality
+    function setupAudienceToggle() {
+      const userToggle = document.getElementById('user-toggle');
+      const investorToggle = document.getElementById('investor-toggle');
+      const body = document.body;
+
+      userToggle.addEventListener('click', () => {
+        body.classList.remove('investor-mode');
+        userToggle.classList.add('active');
+        investorToggle.classList.remove('active');
+      });
+
+      investorToggle.addEventListener('click', () => {
+        body.classList.add('investor-mode');
+        investorToggle.classList.add('active');
+        userToggle.classList.remove('active');
+      });
+    }
+
+    // Animated counters
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 50);
+            let current = 0;
+
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+              } else {
+                counter.textContent = Math.floor(current);
+              }
+            }, 50);
+
+            observer.unobserve(counter);
+          }
+        });
+      });
+
+      counters.forEach(counter => observer.observe(counter));
+    }
+
+    // Progress bars animation
+    function animateProgressBars() {
+      const progressBars = document.querySelectorAll('.progress-fill');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.transition = 'width 2s ease-in-out';
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      progressBars.forEach(bar => observer.observe(bar));
+    }
+
+    // Chart initialization
+    function initializeCharts() {
+      // Sector distribution chart
+      const sectorCtx = document.getElementById('sectorChart')?.getContext('2d');
+      if (sectorCtx) {
+        new Chart(sectorCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Power', 'Steel', 'Cement', 'Buildings', 'Transport', 'Others'],
+            datasets: [{
+              data: [25, 18, 15, 20, 12, 10],
+              backgroundColor: [
+                '#f59e0b', '#6b7280', '#78716c', '#10b981', '#3b82f6', '#14b8a6'
+              ]
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      }
+
+      // Growth chart
+      const growthCtx = document.getElementById('growthChart')?.getContext('2d');
+      if (growthCtx) {
+        new Chart(growthCtx, {
+          type: 'line',
+          data: {
+            labels: ['2023', '2024', '2025', '2026', '2027'],
+            datasets: [{
+              label: 'Market Size ($B)',
+              data: [0.7, 1.2, 2.1, 3.8, 6.2],
+              borderColor: '#14b8a6',
+              backgroundColor: 'rgba(20, 184, 166, 0.1)',
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            }
+          }
+        });
+      }
+
+      // Revenue projections chart
+      const revenueCtx = document.getElementById('revenueChart')?.getContext('2d');
+      if (revenueCtx) {
+        new Chart(revenueCtx, {
+          type: 'bar',
+          data: {
+            labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+            datasets: [
+              {
+                label: 'Platform Revenue',
+                data: [2, 6, 12, 22, 35],
+                backgroundColor: '#14b8a6'
+              },
+              {
+                label: 'AI Services',
+                data: [3, 8, 18, 28, 42],
+                backgroundColor: '#3b82f6'
+              },
+              {
+                label: 'Enterprise',
+                data: [1, 5, 15, 25, 40],
+                backgroundColor: '#10b981'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { stacked: true },
+              y: { stacked: true }
+            }
+          }
+        });
+      }
+    }
+
+    // Initialize all interactive features
+    document.addEventListener('DOMContentLoaded', () => {
+      setupAudienceToggle();
+      animateCounters();
+      animateProgressBars();
+      setTimeout(initializeCharts, 1000); // Delay to ensure DOM is ready
+    });
+
+    // Keyboard shortcuts for presentation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '1') {
+        document.getElementById('user-toggle').click();
+      } else if (e.key === '2') {
+        document.getElementById('investor-toggle').click();
+      }
+    });
+  </script>
+
+</body>
+</html>

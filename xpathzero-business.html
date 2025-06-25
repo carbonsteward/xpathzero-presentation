@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- EDIT -->
+  <title>xPathZero: Transform Your SBTi Journey</title>
+  <meta name="description" content="From 2 weeks to 2 hours: How xPathZero transforms SBTi implementation with peer intelligence">
+  
+  <!-- URL CANONICAL -->
+  <link rel="canonical" href="https://xpathzero.vercel.app/">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+  
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+  
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS for enhanced presentation -->
+  <style>
+    /* Enhanced animations and transitions */
+    .slide-animate {
+      animation: slideInUp 0.8s ease-out;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Interactive elements */
+    .interactive-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .interactive-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* Enhanced metric displays */
+    .metric-highlight {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    
+    .metric-number {
+      font-size: 3rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Agent showcase styles */
+    .agent-tier {
+      background: rgba(255,255,255,0.95);
+      border-left: 4px solid #667eea;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .agent-tier.tier-0 { border-left-color: #ff6b6b; }
+    .agent-tier.tier-1 { border-left-color: #4ecdc4; }
+    .agent-tier.tier-2 { border-left-color: #45b7d1; }
+    .agent-tier.tier-3 { border-left-color: #96ceb4; }
+    
+    /* Chart container */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      margin: 2rem 0;
+    }
+    
+    /* Enhanced buttons */
+    .button-enhanced {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+    
+    .button-enhanced:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+    
+    /* Progress indicators */
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 4px;
+      transition: width 2s ease;
+    }
+    
+    /* Knowledge base visualization */
+    .knowledge-node {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .knowledge-node:hover {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+    }
+    
+    /* Discord bot showcase */
+    .discord-chat {
+      background: #36393f;
+      color: #dcddde;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      margin: 1rem 0;
+    }
+    
+    .discord-message {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+    
+    .discord-user {
+      color: #7289da;
+      font-weight: bold;
+    }
+    
+    .discord-bot {
+      color: #00ff88;
+      font-weight: bold;
+    }
+  </style>
+  
+  <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+  
+  <!-- FACEBOOK -->
+  <meta property="og:url" content="https://xpathzero.vercel.app/"> 
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="xPathZero: Transform Your SBTi Journey">
+  <meta property="og:description" content="From 2 weeks to 2 hours: How xPathZero transforms SBTi implementation with peer intelligence">
+  <meta property="og:updated_time" content="2024-12-25T17:20:50">
+  
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@xPathZero">
+  <meta name="twitter:creator" content="@xPathZero">
+  <meta name="twitter:title" content="xPathZero: Transform Your SBTi Journey">
+  <meta name="twitter:description" content="From 2 weeks to 2 hours: How xPathZero transforms SBTi implementation with peer intelligence">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+  <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+  <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+  <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#333333">
+</head>
+
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <p class="logo"><a href="index.html" title="xPathZero">xPathZero</a></p>
+      <ul>
+        <li class="github">
+          <a rel="external" href="https://github.com/your-repo/xpathzero" title="Github">
+            <svg class="fa-github">
+              <use xlink:href="#fa-github"></use>
+            </svg>
+            <em>xPathZero</em>
+          </a>
+        </li>
+        <li class="twitter">
+          <a rel="external" href="https://twitter.com/xpathzero" title="Twitter">
+            <svg class="fa-twitter">
+              <use xlink:href="#fa-twitter"></use>
+            </svg>
+            <em>@xPathZero</em>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <article id="webslides" class="horizontal">
+      
+      <!-- Title Slide -->
+      <section class="bg-gradient-blue fade-in">
+        <div class="wrap aligncenter">
+          <h1><strong>xPathZero</strong></h1>
+          <p class="text-intro">Transform Your SBTi Journey</p>
+          <p>From <strong>2 weeks to 2 hours</strong></p>
+          <p>Peer intelligence for confident ESG decisions</p>
+          <p>
+            <svg class="fa-leaf">
+              <use xlink:href="#fa-leaf"></use>
+            </svg>
+            Science-Based Targets Implementation Platform
+          </p>
+        </div>
+      </section>
+
+      <!-- The Problem: Sarah's Story -->
+      <section>
+        <div class="wrap">
+          <div class="grid vertical-align">
+            <div class="column">
+              <h2><strong>Meet Sarah</strong></h2>
+              <p class="text-intro">ESG Manager at a $2B Automotive Manufacturer</p>
+              
+              <h3>The Challenge</h3>
+              <p><strong>Quarterly Board Meeting:</strong> Sarah needs to present SBTi strategy recommendations</p>
+              
+              <p><strong>Current Reality:</strong></p>
+              <ul>
+                <li>📅 <strong>2 weeks</strong> of research and preparation</li>
+                <li>📊 Generic recommendations from consultants</li>
+                <li>❓ No proof that strategies work for companies like hers</li>
+                <li>💰 Board questions she can't answer about costs and timelines</li>
+                <li>😰 Uncertainty about which strategies to prioritize</li>
+              </ul>
+              
+              <blockquote>
+                <p>"I spend weeks researching mitigation strategies, only to present generic recommendations without any evidence they'll work for our company."</p>
+                <cite>Sarah, ESG Manager</cite>
+              </blockquote>
+            </div>
+            <div class="column">
+              <h3>The Pain Points</h3>
+              <ul class="flexblock reasons">
+                <li>
+                  <h4>No Peer Intelligence</h4>
+                  <p>Can't find what similar automotive companies are actually implementing</p>
+                </li>
+                <li>
+                  <h4>Generic Advice</h4>
+                  <p>Consultants provide one-size-fits-all recommendations</p>
+                </li>
+                <li>
+                  <h4>Missing Cost Data</h4>
+                  <p>Board wants ROI analysis but real-world cost data doesn't exist</p>
+                </li>
+                <li>
+                  <h4>Implementation Risk</h4>
+                  <p>No way to know which strategies actually succeed in practice</p>
+                </li>
+                <li>
+                  <h4>Time Pressure</h4>
+                  <p>Quarterly deadlines with weeks of manual research</p>
+                </li>
+                <li>
+                  <h4>Credibility Gap</h4>
+                  <p>Board questions recommendations without peer validation</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The SBTi Challenge -->
+      <section class="bg-white">
+        <div class="wrap">
+          <h2><strong>The SBTi Implementation Challenge</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Science-Based Targets Initiative (SBTi)</h3>
+              <p>The global standard for corporate climate action, but implementation is complex:</p>
+              
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-globe">
+                      <use xlink:href="#fa-globe"></use>
+                    </svg>
+                    <h4>13 Sectors</h4>
+                    Each with unique methodologies and requirements
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-industry">
+                      <use xlink:href="#fa-industry"></use>
+                    </svg>
+                    <h4>Sector-Specific</h4>
+                    Automotive, Steel, Cement, Power - different strategies
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-chart-line">
+                      <use xlink:href="#fa-chart-line"></use>
+                    </svg>
+                    <h4>1.5°C Alignment</h4>
+                    Ambitious targets requiring rapid decarbonization
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Current Market Gap</h3>
+              <ul class="flexblock activity">
+                <li>
+                  <p class="meta">Problem 1</p>
+                  <h4>No Peer Intelligence</h4>
+                  <p>ESG managers can't see what similar companies are implementing</p>
+                </li>
+                <li>
+                  <p class="meta">Problem 2</p>
+                  <h4>Generic Consulting</h4>
+                  <p>One-size-fits-all recommendations ignore company-specific context</p>
+                </li>
+                <li>
+                  <p class="meta">Problem 3</p>
+                  <h4>Missing Implementation Data</h4>
+                  <p>No visibility into real-world costs, timelines, and success rates</p>
+                </li>
+                <li>
+                  <p class="meta">Problem 4</p>
+                  <h4>Board Presentation Pressure</h4>
+                  <p>Quarterly deadlines with weeks of manual research and validation</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The xPathZero Solution -->
+      <section class="bg-gradient-green slide-animate">
+        <div class="wrap aligncenter">
+          <h1><strong>The xPathZero Solution</strong></h1>
+          <p class="text-intro">Peer intelligence for confident ESG decisions</p>
+          
+          <div class="grid">
+            <div class="column">
+              <h2>🔍 "Companies Like Yours"</h2>
+              <p>See what automotive manufacturers of your size are actually implementing</p>
+            </div>
+            <div class="column">
+              <h2>📊 Real Implementation Data</h2>
+              <p>Actual costs, timelines, and success rates from peer companies</p>
+            </div>
+            <div class="column">
+              <h2>⚡ 2 Hours Not 2 Weeks</h2>
+              <p>Generate board-ready presentations with peer validation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sarah's New Journey with xPathZero -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Sarah's New Journey with xPathZero</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Step 1: Company Assessment (30 minutes)</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>📋</span>
+                  <h4>ESPK Assessment</h4>
+                  <p><strong>Environmental:</strong> Current emissions, renewable energy usage</p>
+                  <p><strong>Social:</strong> Workforce capabilities, stakeholder engagement</p>
+                  <p><strong>Physical:</strong> Manufacturing assets, technology infrastructure</p>
+                  <p><strong>Knowledge:</strong> R&D capabilities, technical expertise</p>
+                </li>
+              </ul>
+              
+              <h3>Step 2: Peer Intelligence (15 minutes)</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>👥</span>
+                  <h4>Find Your Peers</h4>
+                  <p>"Companies like yours: Mid-size automotive manufacturers in North America"</p>
+                  <p><strong>73% of similar companies</strong> have successfully implemented renewable energy procurement</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Step 3: Strategy Recommendations (45 minutes)</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>🎯</span>
+                  <h4>Personalized Strategies</h4>
+                  <p><strong>Proven (TRL 8-9):</strong> Renewable energy, energy efficiency</p>
+                  <p><strong>Emerging (TRL 5-7):</strong> Electric vehicle fleet, hydrogen pilots</p>
+                  <p><strong>Experimental (TRL 1-4):</strong> Advanced materials, carbon capture</p>
+                </li>
+              </ul>
+              
+              <h3>Step 4: Board Presentation (30 minutes)</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>📊</span>
+                  <h4>Professional Materials</h4>
+                  <p>Executive summary with peer validation data</p>
+                  <p>Implementation roadmap with realistic timelines</p>
+                  <p>Financial analysis with peer cost benchmarks</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="wrap aligncenter">
+            <h2>Total Time: <strong>2 Hours</strong> (vs. 2 weeks previously)</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Peer Intelligence: The Game Changer -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Peer Intelligence: The Game Changer</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>What Sarah Sees Now</h3>
+              <div class="card">
+                <h4>Renewable Energy Procurement</h4>
+                <p><strong>Implementation Rate:</strong> 73% of automotive companies like yours</p>
+                <p><strong>Average Cost:</strong> $45.20 per tonne CO2 abated</p>
+                <p><strong>Timeline:</strong> 14-18 months typical implementation</p>
+                <p><strong>Success Rate:</strong> 89% achieve projected emission reductions</p>
+                <p><strong>Sample Size:</strong> 156 companies (High confidence)</p>
+                
+                <h5>What Similar Companies Say:</h5>
+                <blockquote>
+                  <p>"Started with 20% renewable PPAs, scaled to 60% within 24 months. Key success factor was stakeholder buy-in early."</p>
+                  <cite>Automotive Manufacturer, $1.8B revenue</cite>
+                </blockquote>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Board Presentation Content</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>"Companies Like Ours Are Succeeding"</h4>
+                    <p>73% of similar automotive manufacturers have successfully implemented renewable energy procurement</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Realistic Financial Planning</h4>
+                    <p>Based on actual implementation costs from peer companies: $45.20/tonne CO2</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Implementation Roadmap</h4>
+                    <p>14-18 month timeline based on peer experience, with risk mitigation strategies</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Success Probability</h4>
+                    <p>89% of similar companies achieve projected emission reductions</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Readiness Levels (TRL) -->
+      <section class="bg-light">
+        <div class="wrap">
+          <h2><strong>Technology Strategy: Risk vs. Impact</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Strategic Portfolio Approach</h3>
+              <p>xPathZero categorizes strategies by maturity to help you balance risk and impact:</p>
+              
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-check-circle" style="color: #28a745;">
+                      <use xlink:href="#fa-check-circle"></use>
+                    </svg>
+                    <h4>Proven Strategies (TRL 8-9)</h4>
+                    <p><strong>Low Risk, Proven ROI:</strong> Renewable energy, energy efficiency, waste reduction</p>
+                    <p><strong>Implementation Rate:</strong> 70-85% among peers</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-rocket" style="color: #ffc107;">
+                      <use xlink:href="#fa-rocket"></use>
+                    </svg>
+                    <h4>Emerging Technologies (TRL 5-7)</h4>
+                    <p><strong>Medium Risk, High Potential:</strong> Electric vehicle fleets, hydrogen pilots, advanced manufacturing</p>
+                    <p><strong>Implementation Rate:</strong> 30-50% among peers</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-flask" style="color: #dc3545;">
+                      <use xlink:href="#fa-flask"></use>
+                    </svg>
+                    <h4>Experimental (TRL 1-4)</h4>
+                    <p><strong>High Risk, Future Potential:</strong> Direct air capture, advanced materials, breakthrough technologies</p>
+                    <p><strong>Implementation Rate:</strong> 5-15% among innovation leaders</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Portfolio Recommendations</h3>
+              <div class="card">
+                <h4>Recommended Strategy Mix for Automotive</h4>
+                <ul class="flexblock metrics">
+                  <li>
+                    <span>70%</span>
+                    <div>
+                      <h4>Proven Strategies</h4>
+                      Foundation for immediate emission reductions
+                    </div>
+                  </li>
+                  <li>
+                    <span>25%</span>
+                    <div>
+                      <h4>Emerging Technologies</h4>
+                      Competitive advantage and future readiness
+                    </div>
+                  </li>
+                  <li>
+                    <span>5%</span>
+                    <div>
+                      <h4>Experimental R&D</h4>
+                      Innovation pipeline for long-term transformation
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <blockquote>
+                <p>"This risk-balanced approach helped us achieve 35% emission reduction while maintaining innovation leadership in our sector."</p>
+                <cite>ESG Director, Major Automotive OEM</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI-Powered Multi-Agent Discord Consultation -->
+      <section class="bg-gradient-green">
+        <div class="wrap">
+          <h2><strong>AI-Powered Multi-Agent Consultation System</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>19 Specialized AI Agents on Discord</h3>
+              <p>Get expert SBTi guidance through our multi-tier AI agent system, available 24/7 on Discord:</p>
+              
+              <div class="agent-tier tier-0">
+                <h4>🎯 Tier 0: Router Agent</h4>
+                <p><strong>SBTi Router:</strong> Analyzes your company and routes you to the right experts</p>
+              </div>
+              
+              <div class="agent-tier tier-1">
+                <h4>🏭 Tier 1: Sector Experts (13 Agents)</h4>
+                <p><strong>Power • Steel • Cement • Buildings • Transport • Apparel • FLAG • ICT • Finance • Chemicals • Aviation • Maritime • Oil & Gas</strong></p>
+                <p>Each agent has deep sector-specific knowledge with access to authoritative SBTi guidance</p>
+              </div>
+              
+              <div class="agent-tier tier-2">
+                <h4>📊 Tier 2: Strategy Analysts (3 Agents)</h4>
+                <p><strong>Mitigation Analyst • Cost Strategist • Regional Analyst</strong></p>
+                <p>Cross-sector benchmarking and financial analysis specialists</p>
+              </div>
+              
+              <div class="agent-tier tier-3">
+                <h4>🔬 Tier 3: Innovation Scouts (3 Agents)</h4>
+                <p><strong>Innovation Scout • Innovation Evaluator • Horizon Scanner</strong></p>
+                <p>Emerging technology research and future trend analysis</p>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Live Discord Consultation Demo</h3>
+              <div class="discord-chat">
+                <div class="discord-message">
+                  <span class="discord-user">Sarah (ESG Manager):</span> /sbti_start We're a $2B automotive manufacturer looking to set science-based targets
+                </div>
+                <div class="discord-message">
+                  <span class="discord-bot">🎯 SBTi Router:</span> Analyzing your company profile... Automotive manufacturing, $2B revenue. Routing to sector experts.
+                </div>
+                <div class="discord-message">
+                  <span class="discord-bot">🚛 Transport Expert:</span> Welcome! For automotive manufacturers your size, I recommend focusing on:
+                  <br>1. Fleet electrification (78% peer adoption)
+                  <br>2. Manufacturing efficiency (92% adoption rate)
+                  <br>3. Supply chain engagement (45% actively engaging Tier 1 suppliers)
+                </div>
+                <div class="discord-message">
+                  <span class="discord-bot">💰 Cost Strategist:</span> Based on peer data: Fleet electrification averages $3.2M initial investment with 4-year payback for similar manufacturers.
+                </div>
+                <div class="discord-message">
+                  <span class="discord-bot">📊 Mitigation Analyst:</span> Benchmarking against 73 similar companies shows 89% achieve projected emission reductions with this strategy mix.
+                </div>
+              </div>
+              
+              <h4>Join Our Discord Community</h4>
+              <p>Get instant access to expert SBTi consultation:</p>
+              <p>
+                <a href="https://discord.gg/xpathzero" class="button-enhanced">
+                  💬 Join Discord Community
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sector-Specific Intelligence -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Sector-Specific Intelligence</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Automotive Sector</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>🚗 Electrification Strategy</h4>
+                    <p><strong>78% of OEMs</strong> implementing fleet electrification programs</p>
+                    <p><strong>Timeline:</strong> 3-5 years for significant impact</p>
+                    <p><strong>Key Success Factor:</strong> Supplier ecosystem development</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🏭 Manufacturing Efficiency</h4>
+                    <p><strong>92% adoption rate</strong> for energy management systems</p>
+                    <p><strong>Average Savings:</strong> 15-25% energy reduction</p>
+                    <p><strong>Payback Period:</strong> 18-24 months</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🔋 Supply Chain Decarbonization</h4>
+                    <p><strong>45% actively engaging</strong> Tier 1 suppliers on SBTi</p>
+                    <p><strong>Challenge:</strong> Tier 2/3 supplier visibility</p>
+                    <p><strong>Solution:</strong> Collaborative platforms and incentives</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Steel Sector</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>⚡ Electric Arc Furnaces</h4>
+                    <p><strong>65% of steel companies</strong> investing in EAF technology</p>
+                    <p><strong>CO2 Reduction:</strong> 60-75% vs. traditional blast furnaces</p>
+                    <p><strong>Investment:</strong> $200-400M per facility</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>💨 Hydrogen-Based Production</h4>
+                    <p><strong>Pilot Stage:</strong> 15% running hydrogen trials</p>
+                    <p><strong>Timeline:</strong> Commercial viability by 2028-2030</p>
+                    <p><strong>Key Factor:</strong> Green hydrogen availability and cost</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>♻️ Circular Steel Economy</h4>
+                    <p><strong>85% increasing</strong> recycled content ratios</p>
+                    <p><strong>Target:</strong> 80%+ recycled content by 2030</p>
+                    <p><strong>Benefit:</strong> 70% lower emissions per tonne</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Geographic Intelligence -->
+      <section class="bg-gradient-blue">
+        <div class="wrap">
+          <h2><strong>Geographic Intelligence Matters</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Regional Factors Impact Strategy</h3>
+              <p>xPathZero includes location-specific intelligence for realistic planning:</p>
+              
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-dollar">
+                      <use xlink:href="#fa-dollar"></use>
+                    </svg>
+                    <h4>Carbon Pricing</h4>
+                    EU: $80/tonne vs. US: $15/tonne voluntary markets
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-gavel">
+                      <use xlink:href="#fa-gavel"></use>
+                    </svg>
+                    <h4>Regulatory Environment</h4>
+                    EU taxonomy requirements vs. US SEC climate disclosure rules
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-lightbulb-o">
+                      <use xlink:href="#fa-lightbulb-o"></use>
+                    </svg>
+                    <h4>Incentives & Subsidies</h4>
+                    IRA tax credits in US, Green Deal funding in EU
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Real Example: Renewable Energy</h3>
+              <div class="card">
+                <h4>Strategy Viability by Region</h4>
+                <ul class="flexblock activity">
+                  <li>
+                    <p class="meta">🇺🇸 United States</p>
+                    <h4>Solar + Wind PPAs</h4>
+                    <p><strong>Cost:</strong> $30-45/MWh with IRA tax credits</p>
+                    <p><strong>Timeline:</strong> 12-18 months for large contracts</p>
+                  </li>
+                  <li>
+                    <p class="meta">🇪🇺 European Union</p>
+                    <h4>Green Certificates + PPAs</h4>
+                    <p><strong>Cost:</strong> $55-70/MWh with regulatory support</p>
+                    <p><strong>Timeline:</strong> 18-24 months due to grid constraints</p>
+                  </li>
+                  <li>
+                    <p class="meta">🇨🇦 Canada</p>
+                    <h4>Hydro + Wind Hybrid</h4>
+                    <p><strong>Cost:</strong> $25-40/MWh leveraging natural resources</p>
+                    <p><strong>Timeline:</strong> 6-12 months for existing contracts</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Board Presentation Generator -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Board-Ready Presentations in Minutes</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>What Sarah Delivers to the Board</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>📊</span>
+                  <h4>Executive Summary</h4>
+                  <p>"Based on analysis of 156 automotive companies like ours, we recommend a portfolio approach with 73% probability of success"</p>
+                </li>
+                <li>
+                  <span>📈</span>
+                  <h4>Strategy Recommendations</h4>
+                  <p>Prioritized list with peer implementation rates, costs, and timelines</p>
+                </li>
+                <li>
+                  <span>💰</span>
+                  <h4>Financial Analysis</h4>
+                  <p>ROI analysis based on actual peer implementation costs and outcomes</p>
+                </li>
+                <li>
+                  <span>🗺️</span>
+                  <h4>Implementation Roadmap</h4>
+                  <p>Realistic timeline with milestones based on peer company experience</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Board Questions Sarah Can Now Answer</h3>
+              <div class="card">
+                <h4>"How do we know this will work?"</h4>
+                <blockquote>
+                  <p>"73% of automotive manufacturers of our size have successfully implemented renewable energy procurement, with an average 89% achievement rate of projected emission reductions."</p>
+                </blockquote>
+              </div>
+              
+              <div class="card">
+                <h4>"What will this cost us?"</h4>
+                <blockquote>
+                  <p>"Based on actual implementation data from peer companies, renewable energy procurement costs average $45.20 per tonne CO2 abated, with a typical payback period of 3-4 years."</p>
+                </blockquote>
+              </div>
+              
+              <div class="card">
+                <h4>"How long will this take?"</h4>
+                <blockquote>
+                  <p>"Similar companies report 14-18 month implementation timelines. Key success factors include early stakeholder engagement and phased rollout approach."</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Impact -->
+      <section class="bg-gradient-green">
+        <div class="wrap">
+          <h2><strong>Business Impact & ROI</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Immediate Benefits</h3>
+              <ul class="flexblock metrics">
+                <li>
+                  <span>⚡</span>
+                  <div>
+                    <h4>90% Time Savings</h4>
+                    2 hours instead of 2 weeks for board presentations
+                  </div>
+                </li>
+                <li>
+                  <span>💡</span>
+                  <div>
+                    <h4>Evidence-Based Decisions</h4>
+                    Recommendations backed by peer implementation data
+                  </div>
+                </li>
+                <li>
+                  <span>🎯</span>
+                  <div>
+                    <h4>Higher Success Rate</h4>
+                    Strategies proven by companies like yours
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Long-Term Value</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Competitive Intelligence</h4>
+                    <p>Stay ahead of sector trends and peer strategies</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Risk Mitigation</h4>
+                    <p>Avoid costly implementation failures through peer learning</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Stakeholder Confidence</h4>
+                    <p>Board and investor confidence through peer-validated strategies</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>ROI Analysis</h3>
+              <div class="card">
+                <h4>Cost Savings Calculation</h4>
+                <p><strong>ESG Manager Time Savings:</strong></p>
+                <ul>
+                  <li>Current: 2 weeks × 4 quarters = 8 weeks/year</li>
+                  <li>With xPathZero: 2 hours × 4 quarters = 8 hours/year</li>
+                  <li><strong>Time Saved:</strong> 7.8 weeks per year</li>
+                </ul>
+                
+                <p><strong>Consultant Cost Reduction:</strong></p>
+                <ul>
+                  <li>Typical consulting engagement: $50,000-150,000</li>
+                  <li>xPathZero annual subscription: $25,000</li>
+                  <li><strong>Savings:</strong> $25,000-125,000 annually</li>
+                </ul>
+                
+                <p><strong>Risk Mitigation Value:</strong></p>
+                <ul>
+                  <li>Avoiding one failed implementation saves $500,000-2,000,000</li>
+                  <li>Peer intelligence reduces implementation risk by 40%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Visualization Dashboard -->
+      <section class="bg-light">
+        <div class="wrap">
+          <h2><strong>Real-Time Peer Intelligence Dashboard</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Implementation Success Rates by Sector</h3>
+              <div class="chart-container">
+                <canvas id="sectorChart"></canvas>
+              </div>
+            </div>
+            <div class="column">
+              <h3>Cost vs. Impact Analysis</h3>
+              <div class="chart-container">
+                <canvas id="costImpactChart"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid">
+            <div class="column">
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">73%</span>
+                <h4>Automotive Peer Success Rate</h4>
+                <p>Companies like yours implementing renewable energy</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 73%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">$45.20</span>
+                <h4>Average Cost per Tonne CO2</h4>
+                <p>Real implementation costs from peer data</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">89%</span>
+                <h4>Target Achievement Rate</h4>
+                <p>Peer companies meeting projected reductions</p>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 89%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Platform Features Overview -->
+      <section>
+        <div class="wrap">
+          <h2><strong>How It Works: Platform Overview</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Simple User Journey</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>1</span>
+                  <h4>Company Assessment</h4>
+                  <p>Quick questionnaire about your business capabilities and constraints</p>
+                </li>
+                <li>
+                  <span>2</span>
+                  <h4>Peer Matching</h4>
+                  <p>Find companies like yours based on sector, size, and geography</p>
+                </li>
+                <li>
+                  <span>3</span>
+                  <h4>Strategy Intelligence</h4>
+                  <p>See what your peers are implementing with success rates and costs</p>
+                </li>
+                <li>
+                  <span>4</span>
+                  <h4>Board Materials</h4>
+                  <p>Generate professional presentations with peer validation data</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Key Features</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>🏭 Sector-Specific Intelligence</h4>
+                    <p>Starting with Automotive and Steel, expanding to Cement, Power, and Buildings</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📊 Real Implementation Data</h4>
+                    <p>Costs, timelines, and success rates from actual company implementations</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🌍 Geographic Context</h4>
+                    <p>Regional regulations, incentives, and market conditions</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📈 Progress Tracking</h4>
+                    <p>Monitor implementation progress against peer benchmarks</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🔒 Data Security</h4>
+                    <p>Enterprise-grade security with company data anonymization</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Knowledge Base & RAG System -->
+      <section>
+        <div class="wrap">
+          <h2><strong>AI Knowledge Base & Intelligent Search</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Sector-Specific Knowledge RAG System</h3>
+              <p>Our AI agents access a comprehensive knowledge base with sector-specific SBTi guidance:</p>
+              
+              <h4>Knowledge Base Structure</h4>
+              <div class="knowledge-node">Steel Industry Guidance</div>
+              <div class="knowledge-node">Cement Decarbonization</div>
+              <div class="knowledge-node">Automotive Electrification</div>
+              <div class="knowledge-node">Power Sector Renewables</div>
+              <div class="knowledge-node">Buildings Efficiency</div>
+              <div class="knowledge-node">Transport Innovation</div>
+              <div class="knowledge-node">Chemical Process Optimization</div>
+              <div class="knowledge-node">Aviation Sustainable Fuels</div>
+              <div class="knowledge-node">Maritime Decarbonization</div>
+              <div class="knowledge-node">Oil & Gas Transition</div>
+              <div class="knowledge-node">Finance Green Investment</div>
+              <div class="knowledge-node">ICT Energy Management</div>
+              <div class="knowledge-node">Apparel Supply Chain</div>
+              
+              <h4>RAG Capabilities</h4>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>🔍 Hybrid Retrieval</h4>
+                    <p>Vector similarity + keyword matching + metadata filtering for precise answers</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📚 Authority Levels</h4>
+                    <p>Sources ranked by authority: SBTi Official > Peer-Reviewed > Industry Reports</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📊 Confidence Scoring</h4>
+                    <p>Every response includes confidence levels and source citations</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Intelligent Query Processing</h3>
+              <div class="card interactive-card">
+                <h4>Sample Knowledge Query</h4>
+                <p><strong>User:</strong> "What are the most effective steel decarbonization strategies for medium-sized producers?"</p>
+                
+                <p><strong>AI Response:</strong></p>
+                <blockquote>
+                  <p>Based on SBTi steel sector guidance, medium-sized producers should prioritize:</p>
+                  <ol>
+                    <li><strong>Electric Arc Furnaces (EAF):</strong> 60-75% emission reduction vs. blast furnaces</li>
+                    <li><strong>Scrap Steel Optimization:</strong> Increase recycled content to 80%+ by 2030</li>
+                    <li><strong>Energy Efficiency:</strong> Heat recovery systems, smart controls</li>
+                  </ol>
+                  
+                  <p><strong>Sources:</strong> SBTi Steel Sector Guidance v2.0 (Authority: Official), IEA Net Zero Steel Report (Authority: High)</p>
+                  <p><strong>Confidence:</strong> 95% based on 47 authoritative sources</p>
+                </blockquote>
+              </div>
+              
+              <h3>Cross-Sector Intelligence</h3>
+              <ul class="flexblock activity">
+                <li>
+                  <p class="meta">Tier 1</p>
+                  <h4>Sector-Specific RAG</h4>
+                  <p>Agents access deep sector knowledge with high authority filtering</p>
+                </li>
+                <li>
+                  <p class="meta">Tier 2</p>
+                  <h4>Cross-Sector Search</h4>
+                  <p>Mitigation agents search across sectors for benchmarking insights</p>
+                </li>
+                <li>
+                  <p class="meta">Tier 3</p>
+                  <h4>Innovation Database</h4>
+                  <p>Access to emerging technology and research databases</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Sources and Credibility -->
+      <section class="bg-light">
+        <div class="wrap">
+          <h2><strong>Data Sources & Credibility</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Where Our Intelligence Comes From</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-file-text">
+                      <use xlink:href="#fa-file-text"></use>
+                    </svg>
+                    <h4>CDP Disclosures</h4>
+                    Corporate climate disclosures from 13,000+ companies
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-certificate">
+                      <use xlink:href="#fa-certificate"></use>
+                    </svg>
+                    <h4>SBTi Registry</h4>
+                    Official commitments and approved targets from SBTi
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-book">
+                      <use xlink:href="#fa-book"></use>
+                    </svg>
+                    <h4>Sustainability Reports</h4>
+                    Annual sustainability reports with implementation details
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-university">
+                      <use xlink:href="#fa-university"></use>
+                    </svg>
+                    <h4>Regulatory Filings</h4>
+                    SEC climate disclosures and EU taxonomy reports
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Quality & Transparency</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>📊 Confidence Scores</h4>
+                    <p>Every data point includes confidence level based on source quality and sample size</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🔍 Source Attribution</h4>
+                    <p>Full transparency on data sources with publication dates and credibility ratings</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>🔒 Data Anonymization</h4>
+                    <p>Individual company data is anonymized - only aggregated statistics are shown</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📅 Regular Updates</h4>
+                    <p>Quarterly data updates ensure current and relevant peer intelligence</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <blockquote>
+                <p>"The transparency of data sources gives me confidence to present these recommendations to our board. They can see exactly where the intelligence comes from."</p>
+                <cite>Sarah, ESG Manager</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Getting Started -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Getting Started with xPathZero</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>MVP Launch: Focus on Impact</h3>
+              <ul class="flexblock activity">
+                <li>
+                  <p class="meta">Phase 1</p>
+                  <h4>Automotive & Steel Sectors</h4>
+                  <p>Deep intelligence for two high-impact sectors</p>
+                </li>
+                <li>
+                  <p class="meta">Phase 2</p>
+                  <h4>Expand to 5 Sectors</h4>
+                  <p>Add Cement, Power, and Buildings based on user feedback</p>
+                </li>
+                <li>
+                  <p class="meta">Phase 3</p>
+                  <h4>Full SBTi Coverage</h4>
+                  <p>Complete coverage of all 13 SBTi sectors</p>
+                </li>
+              </ul>
+              
+              <h3>Pilot Program</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>🚀 3-Month Pilot</h4>
+                    <p>Full platform access with dedicated onboarding support</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>📊 Success Metrics</h4>
+                    <p>Track time savings and decision confidence improvements</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Implementation Timeline</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>Week 1</span>
+                  <h4>Platform Setup</h4>
+                  <p>Account creation, company profile, initial assessment</p>
+                </li>
+                <li>
+                  <span>Week 2</span>
+                  <h4>First Analysis</h4>
+                  <p>Peer cohort identification, strategy recommendations</p>
+                </li>
+                <li>
+                  <span>Week 3</span>
+                  <h4>Board Presentation</h4>
+                  <p>Generate first board-ready materials with peer validation</p>
+                </li>
+                <li>
+                  <span>Week 4+</span>
+                  <h4>Ongoing Intelligence</h4>
+                  <p>Quarterly updates, progress tracking, new peer insights</p>
+                </li>
+              </ul>
+              
+              <h3>Success Stories</h3>
+              <blockquote>
+                <p>"In our first quarter using xPathZero, we reduced strategy research time by 85% and presented the most confident SBTi recommendations our board has ever seen."</p>
+                <cite>Director of Sustainability, Fortune 500 Automotive</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="bg-gradient-blue">
+        <div class="wrap aligncenter">
+          <h1><strong>Transform Your SBTi Journey</strong></h1>
+          <p class="text-intro">From 2 weeks to 2 hours</p>
+          <p>Join the pilot program and experience peer intelligence for ESG decisions</p>
+          
+          <div class="grid">
+            <div class="column">
+              <h3>🚀 Ready to Get Started?</h3>
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">3</span>
+                <h4>Month Pilot Program</h4>
+                <p>Full platform access with dedicated support</p>
+              </div>
+              <p>
+                <a href="mailto:pilot@xpathzero.com" class="button-enhanced" title="Join Pilot Program">
+                  🚀 Join Pilot Program
+                </a>
+              </p>
+            </div>
+            <div class="column">
+              <h3>💡 Want to Learn More?</h3>
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">30</span>
+                <h4>Minute Live Demo</h4>
+                <p>See peer intelligence in action</p>
+              </div>
+              <p>
+                <a href="mailto:demo@xpathzero.com" class="button-enhanced" title="Schedule Demo">
+                  📅 Schedule Demo
+                </a>
+              </p>
+            </div>
+            <div class="column">
+              <h3>💬 Try Our AI Agents</h3>
+              <div class="metric-highlight interactive-card">
+                <span class="metric-number">19</span>
+                <h4>Expert AI Agents</h4>
+                <p>Available 24/7 on Discord</p>
+              </div>
+              <p>
+                <a href="https://discord.gg/xpathzero" class="button-enhanced" title="Join Discord">
+                  💬 Join Discord
+                </a>
+              </p>
+            </div>
+          </div>
+          
+          <p>
+            <svg class="fa-envelope">
+              <use xlink:href="#fa-envelope"></use>
+            </svg>
+            Questions? Contact us at hello@xpathzero.com
+          </p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- JavaScript WebSlides -->
+  <script src="static/js/webslides.js"></script>
+  
+  <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+  <script defer src="static/js/svg-icons.js"></script>
+
+  <!-- Enhanced Presentation JavaScript -->
+  <script>
+    // Initialize charts when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sector Implementation Success Chart
+      const sectorCtx = document.getElementById('sectorChart');
+      if (sectorCtx) {
+        new Chart(sectorCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Automotive', 'Steel', 'Cement', 'Power', 'Buildings'],
+            datasets: [{
+              data: [73, 65, 58, 82, 67],
+              backgroundColor: [
+                '#667eea',
+                '#764ba2',
+                '#f093fb',
+                '#f5576c',
+                '#4facfe'
+              ],
+              borderWidth: 3,
+              borderColor: '#fff'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: '#333',
+                  font: {
+                    size: 12
+                  }
+                }
+              },
+              title: {
+                display: true,
+                text: 'Renewable Energy Implementation Success (%)',
+                color: '#333',
+                font: {
+                  size: 16,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // Cost vs Impact Scatter Chart
+      const costImpactCtx = document.getElementById('costImpactChart');
+      if (costImpactCtx) {
+        new Chart(costImpactCtx, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              label: 'Renewable Energy',
+              data: [{x: 45.20, y: 89}],
+              backgroundColor: '#667eea',
+              pointRadius: 8
+            }, {
+              label: 'Energy Efficiency',
+              data: [{x: 32.50, y: 92}],
+              backgroundColor: '#4ecdc4',
+              pointRadius: 8
+            }, {
+              label: 'Electrification',
+              data: [{x: 68.00, y: 78}],
+              backgroundColor: '#45b7d1',
+              pointRadius: 8
+            }, {
+              label: 'Hydrogen Tech',
+              data: [{x: 120.00, y: 45}],
+              backgroundColor: '#f093fb',
+              pointRadius: 8
+            }, {
+              label: 'Carbon Capture',
+              data: [{x: 180.00, y: 35}],
+              backgroundColor: '#f5576c',
+              pointRadius: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Cost per Tonne CO2 ($)',
+                  color: '#333',
+                  font: {
+                    size: 14,
+                    weight: 'bold'
+                  }
+                }
+              },
+              y: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Success Rate (%)',
+                  color: '#333',
+                  font: {
+                    size: 14,
+                    weight: 'bold'
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: '#333',
+                  font: {
+                    size: 11
+                  }
+                }
+              },
+              title: {
+                display: true,
+                text: 'Implementation Cost vs Success Rate',
+                color: '#333',
+                font: {
+                  size: 16,
+                  weight: 'bold'
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // Animate progress bars on scroll
+      const observeProgressBars = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressFill = entry.target.querySelector('.progress-fill');
+            if (progressFill) {
+              setTimeout(() => {
+                progressFill.style.width = progressFill.style.width;
+              }, 500);
+            }
+          }
+        });
+      });
+
+      document.querySelectorAll('.progress-bar').forEach(bar => {
+        observeProgressBars.observe(bar);
+      });
+
+      // Add hover effects to interactive cards
+      document.querySelectorAll('.interactive-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Knowledge node interactions
+      document.querySelectorAll('.knowledge-node').forEach(node => {
+        node.addEventListener('click', function() {
+          // Simulate knowledge search
+          const originalText = this.textContent;
+          this.textContent = 'Searching...';
+          this.style.background = '#667eea';
+          this.style.color = 'white';
+          
+          setTimeout(() => {
+            this.textContent = originalText + ' ✓';
+            setTimeout(() => {
+              this.textContent = originalText;
+              this.style.background = '#f8f9fa';
+              this.style.color = '';
+            }, 2000);
+          }, 1000);
+        });
+      });
+    });
+
+    // Add slide animation classes when slides become visible
+    const observeSlides = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-animate');
+        }
+      });
+    });
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observeSlides.observe(section);
+    });
+  </script>
+
+</body>
+</html>

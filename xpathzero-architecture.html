@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- EDIT -->
+  <title>xPathZero MVP Architecture</title>
+  <meta name="description" content="Technical architecture overview for xPathZero MVP - Peer intelligence-driven ESG decision platform">
+  
+  <!-- URL CANONICAL -->
+  <link rel="canonical" href="https://xpathzero.vercel.app/">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+  
+  <!-- CSS WebSlides -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+  
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+  
+  <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+  
+  <!-- FACEBOOK -->
+  <meta property="og:url" content="https://xpathzero.vercel.app/"> 
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="xPathZero MVP Architecture">
+  <meta property="og:description" content="Technical architecture overview for peer intelligence-driven ESG platform">
+  <meta property="og:updated_time" content="2024-12-25T17:20:50">
+  
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@xPathZero">
+  <meta name="twitter:creator" content="@xPathZero">
+  <meta name="twitter:title" content="xPathZero MVP Architecture">
+  <meta name="twitter:description" content="Technical architecture overview for peer intelligence-driven ESG platform">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+  <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+  <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+  <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#333333">
+</head>
+
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <p class="logo"><a href="index.html" title="xPathZero">xPathZero</a></p>
+      <ul>
+        <li class="github">
+          <a rel="external" href="https://github.com/your-repo/xpathzero" title="Github">
+            <svg class="fa-github">
+              <use xlink:href="#fa-github"></use>
+            </svg>
+            <em>xPathZero</em>
+          </a>
+        </li>
+        <li class="twitter">
+          <a rel="external" href="https://twitter.com/xpathzero" title="Twitter">
+            <svg class="fa-twitter">
+              <use xlink:href="#fa-twitter"></use>
+            </svg>
+            <em>@xPathZero</em>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <article id="webslides" class="horizontal">
+      
+      <!-- Title Slide -->
+      <section>
+        <div class="wrap aligncenter">
+          <h1><strong>xPathZero MVP</strong></h1>
+          <p class="text-intro">Technical Architecture Overview</p>
+          <p>Peer Intelligence-Driven ESG Decision Platform</p>
+          <p>
+            <svg class="fa-calendar-o">
+              <use xlink:href="#fa-calendar-o"></use>
+            </svg>
+            December 2024
+          </p>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Executive Summary</strong></h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>Mission Statement</h3>
+              <p>Transform ESG strategy preparation from <strong>2 weeks to 2 hours</strong> through peer intelligence and evidence-based recommendations.</p>
+              
+              <h3>Core Value Proposition</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-users">
+                      <use xlink:href="#fa-users"></use>
+                    </svg>
+                    <h4>Peer Intelligence</h4>
+                    Real-world implementation data from "companies like yours"
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-cogs">
+                      <use xlink:href="#fa-cogs"></use>
+                    </svg>
+                    <h4>ESPK Assessment</h4>
+                    Environmental, Social, Physical, Knowledge capital evaluation
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-presentation">
+                      <use xlink:href="#fa-presentation"></use>
+                    </svg>
+                    <h4>Board Ready</h4>
+                    Professional presentations with peer validation data
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Key Metrics</h3>
+              <ul class="flexblock metrics">
+                <li>
+                  <span>⚡</span>
+                  <div>
+                    <h4>&lt;5s</h4>
+                    Response time for peer intelligence queries
+                  </div>
+                </li>
+                <li>
+                  <span>🏭</span>
+                  <div>
+                    <h4>2 → 5</h4>
+                    Sectors: Automotive & Steel → +Cement, Power, Buildings
+                  </div>
+                </li>
+                <li>
+                  <span>📊</span>
+                  <div>
+                    <h4>90%</h4>
+                    Test coverage for business logic components
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- High Level Architecture -->
+      <section>
+        <div class="wrap">
+          <h2><strong>High Level Architecture</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Separated Deployment Monolith</h3>
+              <p><strong>Frontend:</strong> Next.js 15 + React 19 → Vercel CDN</p>
+              <p><strong>Backend:</strong> FastAPI + Python 3.10 → Render</p>
+              <p><strong>Database:</strong> PostgreSQL + Redis caching</p>
+              
+              <h4>Key Architectural Patterns:</h4>
+              <ul>
+                <li><strong>Domain-Driven Design:</strong> Clear bounded contexts</li>
+                <li><strong>Repository Pattern:</strong> Abstracted data access</li>
+                <li><strong>CQRS:</strong> Optimized peer intelligence queries</li>
+                <li><strong>Event-Driven ETL:</strong> Real-time data processing</li>
+                <li><strong>Cache-Aside:</strong> Redis for expensive calculations</li>
+              </ul>
+            </div>
+            <div class="column">
+              <pre><code>
+┌─────────────────┐    ┌──────────────────┐
+│   Next.js App   │───▶│   FastAPI API    │
+│   (Vercel CDN)  │    │   (Render)       │
+└─────────────────┘    └──────────────────┘
+                                │
+                    ┌───────────┼───────────┐
+                    │           │           │
+            ┌───────▼────┐ ┌────▼────┐ ┌───▼────┐
+            │PostgreSQL  │ │ Redis   │ │ ETL    │
+            │Database    │ │ Cache   │ │Pipeline│
+            └────────────┘ └─────────┘ └────────┘
+                                             │
+                    ┌────────────────────────┼──────┐
+                    │                        │      │
+            ┌───────▼────┐ ┌─────────▼───┐ ┌─▼────┐
+            │    CDP     │ │    SBTi     │ │ ESG  │
+            │    API     │ │  Registry   │ │Reports│
+            └────────────┘ └─────────────┘ └──────┘
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Technology Stack</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Frontend Technologies</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Next.js 15.3.3</h4>
+                    <p>App Router, static export, complex dashboard navigation</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>React 19</h4>
+                    <p>Concurrent features for responsive assessment interfaces</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>TypeScript 5.3.3</h4>
+                    <p>Strong typing for complex ESPK data models</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Tailwind CSS 3.3.5</h4>
+                    <p>Rapid development with design system consistency</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Yarn 1.22.22</h4>
+                    <p>Existing lockfile compatibility, stable dependency resolution</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Backend Technologies</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Python 3.10.0</h4>
+                    <p>Rich ML/data science ecosystem for recommendation algorithms</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>FastAPI 0.104.1</h4>
+                    <p>Automatic OpenAPI generation, excellent async performance</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>PostgreSQL 15.4</h4>
+                    <p>Complex relational modeling for SBTi sector relationships</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Redis 7.2</h4>
+                    <p>Sub-5s response times for peer intelligence queries</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>SQLAlchemy 2.0.23</h4>
+                    <p>Mature ecosystem with Alembic migrations</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Data Models -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Core Data Models</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Primary Entities</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-user">
+                      <use xlink:href="#fa-user"></use>
+                    </svg>
+                    <h4>User</h4>
+                    Authentication and company association for ESG representatives
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-building">
+                      <use xlink:href="#fa-building"></use>
+                    </svg>
+                    <h4>Company</h4>
+                    Business entity with SBTi sector classification and peer cohort membership
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-chart-bar">
+                      <use xlink:href="#fa-chart-bar"></use>
+                    </svg>
+                    <h4>ESPK Assessment</h4>
+                    Environmental, Social, Physical, Knowledge capital evaluation (0-100 scores)
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Intelligence & Strategy</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-users">
+                      <use xlink:href="#fa-users"></use>
+                    </svg>
+                    <h4>Peer Cohort</h4>
+                    Groups of similar companies for meaningful benchmarking
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-lightbulb-o">
+                      <use xlink:href="#fa-lightbulb-o"></use>
+                    </svg>
+                    <h4>Strategy</h4>
+                    Mitigation strategies with TRL categorization (Proven/Emerging/Experimental)
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-cogs">
+                      <use xlink:href="#fa-cogs"></use>
+                    </svg>
+                    <h4>Implementation Record</h4>
+                    Real-world deployment data with costs, timelines, and success rates
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPK Framework Deep Dive -->
+      <section>
+        <div class="wrap">
+          <h2><strong>ESPK Framework Deep Dive</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Four-Dimensional Assessment</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-leaf">
+                      <use xlink:href="#fa-leaf"></use>
+                    </svg>
+                    <h4>Environmental Capital</h4>
+                    Current emissions, environmental management, renewable energy usage
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-users">
+                      <use xlink:href="#fa-users"></use>
+                    </svg>
+                    <h4>Social Capital</h4>
+                    Workforce sustainability training, stakeholder engagement, change management
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-industry">
+                      <use xlink:href="#fa-industry"></use>
+                    </svg>
+                    <h4>Physical Capital</h4>
+                    Manufacturing assets, facility characteristics, technology infrastructure
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-graduation-cap">
+                      <use xlink:href="#fa-graduation-cap"></use>
+                    </svg>
+                    <h4>Knowledge Capital</h4>
+                    R&D capabilities, technical expertise, innovation partnerships
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Scoring & Validation</h3>
+              <p><strong>Range:</strong> 0-100 for each dimension with business logic validation</p>
+              <p><strong>Composite Score:</strong> Weighted overall ESPK score based on sector-specific factors</p>
+              <p><strong>Peer Comparison:</strong> Real-time benchmarking against similar companies</p>
+              <p><strong>Progress Tracking:</strong> Quarterly assessment updates for improvement monitoring</p>
+              
+              <h4>Critical Implementation Rules:</h4>
+              <ul>
+                <li>All ESPK scores validated within 0-100 range</li>
+                <li>Input validation with business logic constraints</li>
+                <li>Correlation IDs for distributed error tracking</li>
+                <li>Database transactions for multi-table updates</li>
+                <li>Cache invalidation on profile/assessment changes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component Architecture -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Component Architecture</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Core Services</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>1</span>
+                  <h4>Authentication Service</h4>
+                  <p>JWT tokens, company-scoped data access, role-based permissions</p>
+                </li>
+                <li>
+                  <span>2</span>
+                  <h4>ESPK Assessment Service</h4>
+                  <p>Four-dimensional capital scoring with industry-specific algorithms</p>
+                </li>
+                <li>
+                  <span>3</span>
+                  <h4>Peer Intelligence Service</h4>
+                  <p>Real-world implementation analysis and "companies like yours" matching</p>
+                </li>
+                <li>
+                  <span>4</span>
+                  <h4>Recommendation Engine</h4>
+                  <p>AI-powered strategy suggestions combining ESPK + peer intelligence</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Supporting Components</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>5</span>
+                  <h4>Board Presentation Service</h4>
+                  <p>Professional PDF/PowerPoint generation with peer validation data</p>
+                </li>
+                <li>
+                  <span>6</span>
+                  <h4>ETL Pipeline Service</h4>
+                  <p>Data ingestion from CDP, SBTi, ESG reports with quality assurance</p>
+                </li>
+                <li>
+                  <span>7</span>
+                  <h4>Geographic Intelligence</h4>
+                  <p>Regional factors: carbon pricing, incentives, regulatory frameworks</p>
+                </li>
+                <li>
+                  <span>8</span>
+                  <h4>Caching Layer</h4>
+                  <p>Redis-based caching for sub-5 second response requirements</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- API Design -->
+      <section>
+        <div class="wrap">
+          <h2><strong>REST API Design</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Authentication Endpoints</h3>
+              <pre><code>POST /auth/login
+{
+  "email": "sarah@automotive.com",
+  "password": "secure_password"
+}
+
+Response: {
+  "access_token": "jwt_token",
+  "token_type": "bearer",
+  "expires_in": 86400
+}</code></pre>
+              
+              <h3>ESPK Assessment</h3>
+              <pre><code>POST /assessments
+{
+  "company_id": "uuid",
+  "assessment_type": "quarterly"
+}
+
+GET /assessments/{id}/score
+Response: {
+  "environmental_score": 75.5,
+  "social_score": 82.0,
+  "physical_score": 68.3,
+  "knowledge_score": 71.8,
+  "overall_score": 74.4
+}</code></pre>
+            </div>
+            <div class="column">
+              <h3>Peer Intelligence</h3>
+              <pre><code>GET /peer-intelligence/strategies
+?company_id=uuid&sector=automotive&trl_category=proven
+
+Response: {
+  "strategies": [
+    {
+      "strategy_id": "uuid",
+      "name": "Renewable Energy Procurement", 
+      "peer_success_rate": 0.73,
+      "avg_cost_per_tonne": 45.20,
+      "sample_size": 156,
+      "confidence_level": "high"
+    }
+  ]
+}</code></pre>
+              
+              <h3>Presentation Generation</h3>
+              <pre><code>POST /presentations/generate
+{
+  "company_id": "uuid",
+  "template_type": "quarterly_update",
+  "include_recommendations": ["uuid1", "uuid2"]
+}
+
+Response: {
+  "presentation_id": "uuid",
+  "preview_url": "https://...",
+  "export_formats": ["powerpoint", "pdf", "web"]
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Database Schema -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Database Schema</strong></h2>
+          <pre><code>-- Core User and Company Management
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    company_id UUID NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'analyst'
+);
+
+CREATE TABLE companies (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    industry VARCHAR(100) NOT NULL,
+    employee_count INTEGER,
+    annual_revenue DECIMAL(15,2),
+    sbti_sector VARCHAR(100)
+);
+
+-- ESPK Assessment Framework
+CREATE TABLE espk_assessments (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    company_id UUID NOT NULL REFERENCES companies(id),
+    environmental_score DECIMAL(5,2) CHECK (environmental_score BETWEEN 0 AND 100),
+    social_score DECIMAL(5,2) CHECK (social_score BETWEEN 0 AND 100),
+    physical_score DECIMAL(5,2) CHECK (physical_score BETWEEN 0 AND 100),
+    knowledge_score DECIMAL(5,2) CHECK (knowledge_score BETWEEN 0 AND 100),
+    overall_score DECIMAL(5,2) CHECK (overall_score BETWEEN 0 AND 100),
+    assessment_data JSONB NOT NULL
+);
+
+-- Strategy and Implementation Intelligence
+CREATE TABLE strategies (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    sector VARCHAR(100) NOT NULL,
+    trl_level INTEGER CHECK (trl_level BETWEEN 1 AND 9),
+    trl_category VARCHAR(20) CHECK (trl_category IN ('proven', 'emerging', 'experimental')),
+    avg_implementation_cost DECIMAL(12,2),
+    success_rate DECIMAL(3,2) CHECK (success_rate BETWEEN 0 AND 1)
+);</code></pre>
+        </div>
+      </section>
+
+      <!-- Security Architecture -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Security Architecture</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Authentication & Authorization</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>JWT Tokens</h4>
+                    <p>HS256 signing with 24-hour expiration and refresh token rotation</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Company-Scoped Access</h4>
+                    <p>Users can only access their company's data with role-based permissions</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>API Rate Limiting</h4>
+                    <p>100 requests/minute per user, 1000/minute per company</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Data Protection</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Encryption at Rest</h4>
+                    <p>PostgreSQL transparent data encryption for sensitive company data</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>TLS 1.2+ Transit</h4>
+                    <p>All API communications with certificate pinning</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Input Validation</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-shield">
+                      <use xlink:href="#fa-shield"></use>
+                    </svg>
+                    <h4>Pydantic + Zod</h4>
+                    Comprehensive validation across TypeScript/Python boundary
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-database">
+                      <use xlink:href="#fa-database"></use>
+                    </svg>
+                    <h4>Range Validation</h4>
+                    ESPK scores strictly validated within 0-100 range
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-user-secret">
+                      <use xlink:href="#fa-user-secret"></use>
+                    </svg>
+                    <h4>Data Anonymization</h4>
+                    Peer intelligence shows only aggregated statistics
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Security Testing</h3>
+              <p><strong>SAST:</strong> CodeQL via GitHub Actions for static analysis</p>
+              <p><strong>Dependency Scanning:</strong> GitHub Dependabot with automated updates</p>
+              <p><strong>Penetration Testing:</strong> Quarterly security review for production</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testing Strategy -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Testing Strategy</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Test Pyramid</h3>
+              <ul class="flexblock metrics">
+                <li>
+                  <span>70%</span>
+                  <div>
+                    <h4>Unit Tests</h4>
+                    Business logic, ESPK algorithms, peer calculations
+                  </div>
+                </li>
+                <li>
+                  <span>20%</span>
+                  <div>
+                    <h4>Integration Tests</h4>
+                    API endpoints, database operations, external services
+                  </div>
+                </li>
+                <li>
+                  <span>10%</span>
+                  <div>
+                    <h4>End-to-End Tests</h4>
+                    Critical user journeys with Playwright
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Coverage Goals</h3>
+              <p><strong>Backend:</strong> 90% for core business logic services</p>
+              <p><strong>Frontend:</strong> 80% for component coverage</p>
+              <p><strong>Critical Systems:</strong> 100% for ESPK scoring and peer intelligence</p>
+            </div>
+            <div class="column">
+              <h3>Testing Frameworks</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Backend: pytest 7.4.3</h4>
+                    <p>Async support, comprehensive fixtures, integration with FastAPI TestClient</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Frontend: Jest 29.7.0</h4>
+                    <p>React Testing Library integration, component testing</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>E2E: Playwright 1.40.0</h4>
+                    <p>Cross-browser testing, authentication flows, presentation generation</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Test Data Management</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <h4>Factory Pattern</h4>
+                    <p>Realistic test data with valid ESPK relationships</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Fixtures</h4>
+                    <p>JSON fixtures for company profiles, assessments, peer data</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Cleanup</h4>
+                    <p>Automatic transaction rollback for isolated testing</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deployment Architecture -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Deployment Architecture</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Separated Deployment</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>🌐</span>
+                  <h4>Frontend: Vercel CDN</h4>
+                  <p>Next.js static export for global CDN distribution</p>
+                </li>
+                <li>
+                  <span>⚡</span>
+                  <h4>Backend: Render Container</h4>
+                  <p>FastAPI application with auto-scaling and health checks</p>
+                </li>
+                <li>
+                  <span>🗄️</span>
+                  <h4>Database: Render PostgreSQL</h4>
+                  <p>Managed PostgreSQL with automatic backups</p>
+                </li>
+                <li>
+                  <span>🚀</span>
+                  <h4>API Routing</h4>
+                  <p>Vercel proxies /api/* requests to Render backend</p>
+                </li>
+              </ul>
+              
+              <h3>Environment Promotion</h3>
+              <pre><code>Local Development → 
+  Feature Branch → 
+    Staging (Preview) → 
+      Production (Main)
+
+Unit Tests → 
+  Integration Tests → 
+    E2E Tests → 
+      Deployment</code></pre>
+            </div>
+            <div class="column">
+              <h3>CI/CD Pipeline</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>GitHub Actions</h4>
+                    <p>Parallel execution for frontend and backend workflows</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Automated Testing</h4>
+                    <p>pytest (backend), Jest (frontend), Playwright (E2E)</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Database Migrations</h4>
+                    <p>Alembic migrations with automated deployment integration</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Health Checks</h4>
+                    <p>Automated rollback on health check failures (&lt;5 min RTO)</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Monitoring & Observability</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <h4>Structured Logging</h4>
+                    <p>JSON format with correlation IDs and user context</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Performance Monitoring</h4>
+                    <p>Response time tracking for &lt;5s requirement compliance</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Error Tracking</h4>
+                    <p>Comprehensive error logging with business context</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance & Scaling -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Performance & Scaling</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Performance Requirements</h3>
+              <ul class="flexblock metrics">
+                <li>
+                  <span>⚡</span>
+                  <div>
+                    <h4>&lt;5 Seconds</h4>
+                    Peer intelligence query response time
+                  </div>
+                </li>
+                <li>
+                  <span>📊</span>
+                  <div>
+                    <h4>99.5% Uptime</h4>
+                    During business hours (9 AM - 6 PM)
+                  </div>
+                </li>
+                <li>
+                  <span>👥</span>
+                  <div>
+                    <h4>100+ Concurrent</h4>
+                    ESG representatives without performance degradation
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Caching Strategy</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>Redis Cache-Aside</h4>
+                    <p>Expensive peer intelligence calculations cached with TTL</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>Query Optimization</h4>
+                    <p>Database indexes for peer cohort and recommendation queries</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>CDN Distribution</h4>
+                    <p>Vercel global CDN for frontend static assets</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Scaling Architecture</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-expand">
+                      <use xlink:href="#fa-expand"></use>
+                    </svg>
+                    <h4>Horizontal Scaling</h4>
+                    Render auto-scaling based on CPU and memory metrics
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-database">
+                      <use xlink:href="#fa-database"></use>
+                    </svg>
+                    <h4>Database Growth</h4>
+                    Schema designed for 2→5 sector expansion without downtime
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-cogs">
+                      <use xlink:href="#fa-cogs"></use>
+                    </svg>
+                    <h4>ETL Pipeline</h4>
+                    Asynchronous processing prevents user-facing performance impact
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Load Testing</h3>
+              <p><strong>Concurrent Users:</strong> 100+ ESG representatives</p>
+              <p><strong>Peer Queries:</strong> Complex multi-company comparisons &lt;5s</p>
+              <p><strong>Recommendation Generation:</strong> Real-time ESPK + peer analysis</p>
+              <p><strong>Presentation Export:</strong> PowerPoint/PDF generation under load</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Epic 1 Implementation Roadmap -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Epic 1: Foundation & Authentication</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Implementation Tasks</h3>
+              <ul class="flexblock steps">
+                <li>
+                  <span>1.1</span>
+                  <h4>User Authentication System</h4>
+                  <p>JWT tokens, email verification, password complexity, company association</p>
+                </li>
+                <li>
+                  <span>1.2</span>
+                  <h4>Company Profile Creation</h4>
+                  <p>Business info, SBTi sector classification, employee count, revenue data</p>
+                </li>
+                <li>
+                  <span>1.3</span>
+                  <h4>Environmental Capital Assessment</h4>
+                  <p>Emissions data, management systems, renewable energy, waste practices</p>
+                </li>
+                <li>
+                  <span>1.4</span>
+                  <h4>Social Capital Assessment</h4>
+                  <p>Workforce training, stakeholder engagement, change management capacity</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <ul class="flexblock steps">
+                <li>
+                  <span>1.5</span>
+                  <h4>Physical & Knowledge Capital</h4>
+                  <p>Manufacturing assets, R&D capabilities, technical expertise, infrastructure</p>
+                </li>
+                <li>
+                  <span>1.6</span>
+                  <h4>Basic Peer Intelligence</h4>
+                  <p>Automotive/steel sector cohorts, peer comparison, confidence indicators</p>
+                </li>
+              </ul>
+              
+              <h3>Acceptance Criteria</h3>
+              <ul class="flexblock features">
+                <li>
+                  <div>
+                    <h4>✅ Authentication</h4>
+                    <p>JWT tokens, 24-hour expiration, company-scoped access</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>✅ ESPK Scoring</h4>
+                    <p>All four dimensions calculated, 0-100 validation, peer benchmarking</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <h4>✅ Database Schema</h4>
+                    <p>PostgreSQL models, Alembic migrations, sector expansion ready</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section>
+        <div class="wrap">
+          <h2><strong>Next Steps & Implementation</strong></h2>
+          <div class="grid">
+            <div class="column">
+              <h3>Immediate Priorities</h3>
+              <ul class="flexblock activity">
+                <li>
+                  <p class="meta">Week 1-2</p>
+                  <h4>Epic 1 Foundation</h4>
+                  <p>Enhanced authentication, company profiles, ESPK assessment framework</p>
+                </li>
+                <li>
+                  <p class="meta">Week 3-4</p>
+                  <h4>Peer Intelligence MVP</h4>
+                  <p>Automotive/steel cohorts, basic matching algorithms, confidence scoring</p>
+                </li>
+                <li>
+                  <p class="meta">Week 5-6</p>
+                  <h4>Recommendation Engine</h4>
+                  <p>TRL categorization, multi-criteria algorithms, peer validation</p>
+                </li>
+                <li>
+                  <p class="meta">Week 7-8</p>
+                  <h4>Board Presentations</h4>
+                  <p>Template system, PDF/PowerPoint generation, export workflows</p>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>Technical Implementation</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                    <svg class="fa-code">
+                      <use xlink:href="#fa-code"></use>
+                    </svg>
+                    <h4>Development Standards</h4>
+                    Follow established coding standards with 90% test coverage
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-database">
+                      <use xlink:href="#fa-database"></use>
+                    </svg>
+                    <h4>Database First</h4>
+                    Implement PostgreSQL schema with Alembic migrations
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <svg class="fa-rocket">
+                      <use xlink:href="#fa-rocket"></use>
+                    </svg>
+                    <h4>Performance Focus</h4>
+                    Redis caching implementation for &lt;5s response times
+                  </div>
+                </li>
+              </ul>
+              
+              <h3>Success Metrics</h3>
+              <p><strong>User Experience:</strong> 2 hours instead of 2 weeks for board presentations</p>
+              <p><strong>Data Quality:</strong> High confidence peer intelligence with source attribution</p>
+              <p><strong>System Performance:</strong> Sub-5 second response times for complex queries</p>
+              <p><strong>Test Coverage:</strong> 90% backend, 80% frontend coverage achieved</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Thank You -->
+      <section class="bg-black-blue">
+        <span class="background dark" style="background-image:url('static/images/setup.png')"></span>
+        <div class="wrap">
+          <div class="content-center">
+            <h1><strong>xPathZero MVP</strong></h1>
+            <p class="text-intro">Ready for Development</p>
+            <p>Comprehensive architecture designed for peer intelligence-driven ESG platform</p>
+            <p>
+              <a href="https://github.com/your-repo/xpathzero" class="button ghost" title="GitHub Repository">
+                <svg class="fa-github">
+                  <use xlink:href="#fa-github"></use>
+                </svg>
+                View on GitHub
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- JavaScript WebSlides -->
+  <script src="static/js/webslides.js"></script>
+  
+  <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+  <script defer src="static/js/svg-icons.js"></script>
+
+</body>
+</html>

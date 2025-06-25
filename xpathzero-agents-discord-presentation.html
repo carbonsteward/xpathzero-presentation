@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>xPathZero: Multi-Agent Discord Bot for SBTi Compliance</title>
+  <meta name="description" content="19 specialized AI agents providing comprehensive SBTi consultation through Discord">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- WebSlides CSS -->
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css">
+  <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+
+  <!-- FAVICONS -->
+  <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+  <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+  <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+  <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+  <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+  <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+  <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+  <!-- Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#333333">
+
+  <style>
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .agent-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .agent-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    
+    .agent-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .agent-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .agent-specialty {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+    
+    .tier-section {
+      margin: 3rem 0;
+    }
+    
+    .tier-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .tier-description {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #5d6d7e;
+      margin-bottom: 2rem;
+    }
+    
+    .command-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .command-card {
+      background: white;
+      border: 2px solid #e8f4f8;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .command-name {
+      font-family: 'Courier New', monospace;
+      background: #f8f9fa;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #2c3e50;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-highlight {
+      background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #667eea;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: #5d6d7e;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main role="main">
+    <article id="webslides" class="horizontal">
+      
+      <!-- Slide 1: Title -->
+      <section class="bg-gradient-blue">
+        <div class="wrap aligncenter">
+          <h1>
+            <strong>xPathZero Multi-Agent Discord Bot</strong>
+          </h1>
+          <p class="text-intro">
+            19 Specialized AI Agents for Complete SBTi Compliance Consultation
+          </p>
+          <div class="bg-white shadow" style="padding: 2rem; border-radius: 15px; margin-top: 3rem;">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">19</span>
+                <span class="stat-label">AI Agents</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Discord Commands</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">2025</span>
+                <span class="stat-label">Latest SBTi Updates</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">90%</span>
+                <span class="stat-label">System Reliability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2: Overview -->
+      <section>
+        <div class="wrap">
+          <h2>Multi-Agent Architecture Overview</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>🎯 Mission</h3>
+              <p>Transform SBTi compliance from complex documentation into interactive, expert-guided consultation through Discord.</p>
+              
+              <h3>🏗️ Architecture</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <strong>19 Specialized Agents</strong>
+                  <span>Each with unique expertise and persona</span>
+                </li>
+                <li>
+                  <strong>Multi-Tier System</strong>
+                  <span>Router → Sector Experts → Analysts → Innovation</span>
+                </li>
+                <li>
+                  <strong>Knowledge Integration</strong>
+                  <span>2025 SBTi updates with 90-100% authority</span>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <div class="feature-highlight">
+                <h3>🚀 Latest 2025 Updates</h3>
+                <p><strong>Corporate Net-Zero Standard V2.0</strong><br>
+                Enhanced validation process with company categorization</p>
+                <p><strong>New Sector Standards</strong><br>
+                Automotive (June 2025) & Power Sector updates</p>
+                <p><strong>FLAG Guidance V1.1</strong><br>
+                Improved accessibility and transparency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: Tier 0 - Router Agent -->
+      <section class="bg-light">
+        <div class="wrap">
+          <div class="tier-section">
+            <h2 class="tier-title">Tier 0: Router Agent</h2>
+            <p class="tier-description">Company analysis and intelligent expert routing</p>
+            
+            <div class="agent-grid">
+              <div class="agent-card" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                <span class="agent-emoji">🎯</span>
+                <div class="agent-name">SBTi Router</div>
+                <div class="agent-specialty">
+                  Company Analysis & Expert Routing<br><br>
+                  • Comprehensive company profiling<br>
+                  • Intelligent sector identification<br>
+                  • Multi-tier expert coordination<br>
+                  • Access to all 2025 SBTi updates
+                </div>
+              </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+              <h4>Primary Entry Point</h4>
+              <p>All consultations begin with the Router Agent, which profiles companies and routes them to appropriate sector experts based on business activities and sustainability needs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: Tier 1 - Sector Experts (Part 1) -->
+      <section>
+        <div class="wrap">
+          <div class="tier-section">
+            <h2 class="tier-title">Tier 1: Sector Expert Agents (1/2)</h2>
+            <p class="tier-description">13 specialized sector experts with deep domain knowledge</p>
+            
+            <div class="agent-grid">
+              <div class="agent-card" style="background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);">
+                <span class="agent-emoji">⚡</span>
+                <div class="agent-name">Power Expert</div>
+                <div class="agent-specialty">Power Generation & Utilities<br>• 2025 Power Sector Updates</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                <span class="agent-emoji">🏭</span>
+                <div class="agent-name">Steel Expert</div>
+                <div class="agent-specialty">Steel Industry Decarbonization<br>• Process optimization & technology</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);">
+                <span class="agent-emoji">🏗️</span>
+                <div class="agent-name">Cement Expert</div>
+                <div class="agent-specialty">Cement Industry Sustainability<br>• Alternative materials & efficiency</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);">
+                <span class="agent-emoji">🏢</span>
+                <div class="agent-name">Buildings Expert</div>
+                <div class="agent-specialty">Building Sector Decarbonization<br>• Energy efficiency & green building</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);">
+                <span class="agent-emoji">🚛</span>
+                <div class="agent-name">Transport Expert</div>
+                <div class="agent-specialty">Transportation Decarbonization<br>• Electrification & logistics</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);">
+                <span class="agent-emoji">👔</span>
+                <div class="agent-name">Apparel Expert</div>
+                <div class="agent-specialty">Apparel & Footwear Sustainability<br>• Circular fashion & supply chain</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Tier 1 - Sector Experts (Part 2) -->
+      <section class="bg-light">
+        <div class="wrap">
+          <div class="tier-section">
+            <h2 class="tier-title">Tier 1: Sector Expert Agents (2/2)</h2>
+            <p class="tier-description">Completing our 13 specialized sector experts</p>
+            
+            <div class="agent-grid">
+              <div class="agent-card" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
+                <span class="agent-emoji">🌾</span>
+                <div class="agent-name">FLAG Expert</div>
+                <div class="agent-specialty">Forest, Land & Agriculture<br>• FLAG Guidance V1.1 (2025)</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                <span class="agent-emoji">💻</span>
+                <div class="agent-name">ICT Expert</div>
+                <div class="agent-specialty">ICT & Technology Sector<br>• Data centers & digital solutions</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+                <span class="agent-emoji">🏦</span>
+                <div class="agent-name">Finance Expert</div>
+                <div class="agent-specialty">Financial Institutions<br>• Portfolio decarbonization</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);">
+                <span class="agent-emoji">🧪</span>
+                <div class="agent-name">Chemicals Expert</div>
+                <div class="agent-specialty">Chemicals Industry<br>• Green chemistry & processes</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);">
+                <span class="agent-emoji">✈️</span>
+                <div class="agent-name">Aviation Expert</div>
+                <div class="agent-specialty">Aviation Industry<br>• Sustainable aviation fuels</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                <span class="agent-emoji">🚢</span>
+                <div class="agent-name">Maritime Expert</div>
+                <div class="agent-specialty">Maritime & Shipping<br>• Alternative fuels & efficiency</div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+                <span class="agent-emoji">🛢️</span>
+                <div class="agent-name">Oil & Gas Expert</div>
+                <div class="agent-specialty">Oil & Gas Industry<br>• Methane reduction & transition</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Tier 2 - Strategy Analysts -->
+      <section>
+        <div class="wrap">
+          <div class="tier-section">
+            <h2 class="tier-title">Tier 2: Strategy Analyst Agents</h2>
+            <p class="tier-description">Strategic analysis and implementation guidance</p>
+            
+            <div class="agent-grid">
+              <div class="agent-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <span class="agent-emoji">📊</span>
+                <div class="agent-name">Mitigation Analyst</div>
+                <div class="agent-specialty">
+                  Strategy Benchmarking & Analysis<br><br>
+                  • Cross-sector mitigation strategies<br>
+                  • Peer benchmarking analysis<br>
+                  • Best practice identification<br>
+                  • Implementation roadmaps
+                </div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);">
+                <span class="agent-emoji">💰</span>
+                <div class="agent-name">Cost Strategist</div>
+                <div class="agent-specialty">
+                  Financial Analysis & ROI<br><br>
+                  • Cost-benefit analysis<br>
+                  • Financial modeling<br>
+                  • ROI calculations<br>
+                  • Investment prioritization
+                </div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);">
+                <span class="agent-emoji">🌍</span>
+                <div class="agent-name">Regional Analyst</div>
+                <div class="agent-specialty">
+                  Regional Adaptation & Compliance<br><br>
+                  • Regional regulation mapping<br>
+                  • Local policy analysis<br>
+                  • Market-specific guidance<br>
+                  • Compliance frameworks
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: Tier 3 - Innovation Agents -->
+      <section class="bg-light">
+        <div class="wrap">
+          <div class="tier-section">
+            <h2 class="tier-title">Tier 3: Innovation Agents</h2>
+            <p class="tier-description">Emerging technology and future-focused insights</p>
+            
+            <div class="agent-grid">
+              <div class="agent-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                <span class="agent-emoji">🔬</span>
+                <div class="agent-name">Innovation Scout</div>
+                <div class="agent-specialty">
+                  Emerging Technology Research<br><br>
+                  • Technology landscape scanning<br>
+                  • Innovation pipeline tracking<br>
+                  • Startup ecosystem monitoring<br>
+                  • Research & development trends
+                </div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                <span class="agent-emoji">🧪</span>
+                <div class="agent-name">Innovation Evaluator</div>
+                <div class="agent-specialty">
+                  Technology Assessment & Validation<br><br>
+                  • Technology readiness assessment<br>
+                  • Scalability analysis<br>
+                  • Risk evaluation<br>
+                  • Implementation feasibility
+                </div>
+              </div>
+              <div class="agent-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <span class="agent-emoji">🔭</span>
+                <div class="agent-name">Horizon Scanner</div>
+                <div class="agent-specialty">
+                  Sector Transformation Trends<br><br>
+                  • Long-term trend analysis<br>
+                  • Disruptive technology identification<br>
+                  • Future scenario planning<br>
+                  • Strategic foresight
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: Discord Commands Overview -->
+      <section>
+        <div class="wrap">
+          <h2>Discord Bot Commands</h2>
+          <p class="text-intro">8 comprehensive slash commands for complete SBTi consultation</p>
+          
+          <div class="command-list">
+            <div class="command-card">
+              <div class="command-name">/sbti_start</div>
+              <p><strong>Primary SBTi Consultation</strong></p>
+              <p>Complete consultation with company profiling, expert routing, and implementation roadmap. Uses 2025 V2.0 standard.</p>
+            </div>
+            
+            <div class="command-card">
+              <div class="command-name">/sector_identify</div>
+              <p><strong>AI-Powered Sector Classification</strong></p>
+              <p>Intelligent sector identification based on business description. Includes 2025 automotive sector standard.</p>
+            </div>
+            
+            <div class="command-card">
+              <div class="command-name">/sbti_qa</div>
+              <p><strong>Enhanced Q&A Database (2025 Updated)</strong></p>
+              <p>23 topics including net zero V2.0, validation process, automotive, power sector, and FLAG guidance.</p>
+            </div>
+            
+            <div class="command-card">
+              <div class="command-name">/agents_status</div>
+              <p><strong>Agent Overview</strong></p>
+              <p>View all 19 agents, their specializations, and current operational status.</p>
+            </div>
+            
+            <div class="command-card">
+              <div class="command-name">/knowledge_search</div>
+              <p><strong>Direct Knowledge Search</strong></p>
+              <p>Search agent-specific knowledge databases with authority levels and source attribution.</p>
+            </div>
+            
+            <div class="command-card">
+              <div class="command-name">/chat_with_experts</div>
+              <p><strong>Multi-Agent Consultation</strong></p>
+              <p>Interactive consultation with dynamic expert routing and collaborative guidance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: 2025 SBTi Knowledge Integration -->
+      <section class="bg-gradient-blue">
+        <div class="wrap aligncenter">
+          <h2 style="color: white;">2025 SBTi Knowledge Integration</h2>
+          <p class="text-intro" style="color: rgba(255,255,255,0.9);">
+            Latest developments integrated across all agents
+          </p>
+          
+          <div class="bg-white shadow" style="padding: 3rem; border-radius: 15px; margin-top: 2rem;">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3>🎯 Corporate Net-Zero Standard V2.0</h3>
+                <ul>
+                  <li>Enhanced commitment process</li>
+                  <li>Company categorization (Category A/B)</li>
+                  <li>Flexible Scope 3 approach</li>
+                  <li>Three-stage validation process</li>
+                  <li>50% emission reduction by 2030</li>
+                </ul>
+                
+                <h3>🔄 Enhanced Validation Process</h3>
+                <ul>
+                  <li>Entry Check</li>
+                  <li>Initial Validation</li>
+                  <li>Renewal Validation</li>
+                  <li>Progress reporting every 5 years</li>
+                </ul>
+              </div>
+              <div class="column">
+                <h3>🚗 New Sector Standards</h3>
+                <ul>
+                  <li><strong>Automotive Sector</strong> - June 2025 consultation</li>
+                  <li><strong>Power Sector</strong> - Q2 2025 updates</li>
+                  <li><strong>FLAG V1.1</strong> - Enhanced accessibility</li>
+                </ul>
+                
+                <h3>📊 Integration Statistics</h3>
+                <ul>
+                  <li><strong>5</strong> new knowledge files created</li>
+                  <li><strong>23</strong> new Q&A entries</li>
+                  <li><strong>90-100%</strong> authority levels</li>
+                  <li><strong>90%</strong> system test success rate</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                  <strong style="color: #667eea; font-size: 1.2rem;">All 19 agents updated with latest guidance</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10: Knowledge Architecture -->
+      <section class="bg-light">
+        <div class="wrap">
+          <h2>Knowledge Base Architecture</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>📁 Knowledge Structure</h3>
+              <pre style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; font-size: 0.9rem;">
+backend/knowledge/
+├── sectors/              # Sector-specific
+│   ├── power/           # Power Expert
+│   ├── steel/           # Steel Expert
+│   ├── automotive/      # Automotive (2025)
+│   └── [13 sectors]/    # All SBTi sectors
+├── shared/              # Cross-sector
+│   ├── analysts/        # Strategy agents
+│   ├── innovation/      # Innovation agents
+│   └── sbti_general/    # Router & general
+└── tools/               # RAG & processing
+              </pre>
+            </div>
+            <div class="column">
+              <h3>🎯 Authority Levels</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <strong>100%</strong>
+                  <span>Official SBTi guidance & standards</span>
+                </li>
+                <li>
+                  <strong>95-98%</strong>
+                  <span>SBTi documentation & tools</span>
+                </li>
+                <li>
+                  <strong>90-95%</strong>
+                  <span>Industry association guidance</span>
+                </li>
+                <li>
+                  <strong>85-90%</strong>
+                  <span>Synthetic expert knowledge</span>
+                </li>
+              </ul>
+              
+              <div class="feature-highlight" style="margin-top: 2rem;">
+                <h4>Real-time Access</h4>
+                <p>All agents search across relevant knowledge with citations and confidence scores</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 11: User Experience Flow -->
+      <section>
+        <div class="wrap">
+          <h2>User Experience Flow</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>🚀 Complete Consultation Flow</h3>
+              <ol>
+                <li><strong>/sbti_start</strong> - Router Agent profiles company</li>
+                <li><strong>Intelligent Routing</strong> - Assigns sector experts</li>
+                <li><strong>Multi-Tier Analysis</strong> - Experts collaborate</li>
+                <li><strong>Implementation Roadmap</strong> - Complete guidance</li>
+              </ol>
+              
+              <h3>🔍 Research & Planning Flow</h3>
+              <ol>
+                <li><strong>/sector_identify</strong> - AI sector classification</li>
+                <li><strong>/sbti_qa</strong> - Topic-specific guidance</li>
+                <li><strong>/agents_status</strong> - Find relevant experts</li>
+                <li><strong>/chat_with_experts</strong> - Interactive planning</li>
+              </ol>
+            </div>
+            <div class="column">
+              <div style="background: white; border: 2px solid #e8f4f8; border-radius: 10px; padding: 2rem;">
+                <h4>Example Interaction</h4>
+                <div style="font-family: monospace; font-size: 0.9rem;">
+                  <p><strong>User:</strong> /sbti_start</p>
+                  <p><strong>🎯 Router:</strong> "Tell me about your company's sector..."</p>
+                  <p><strong>⚡ Power Expert:</strong> "Based on your utility profile, here's how 2025 updates affect you..."</p>
+                  <p><strong>📊 Analyst:</strong> "Your peers achieved 45% reduction using these strategies..."</p>
+                  <p><strong>💰 Cost Strategist:</strong> "ROI analysis shows optimal investment path..."</p>
+                </div>
+              </div>
+              
+              <div class="feature-highlight" style="margin-top: 1.5rem;">
+                <h4>Authentic Multi-Agent Experience</h4>
+                <p>Each agent appears as individual Discord user with unique identity and specialized knowledge</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 12: Technical Implementation -->
+      <section class="bg-light">
+        <div class="wrap">
+          <h2>Technical Implementation</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <h3>🏗️ Architecture Components</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <strong>Discord.py Framework</strong>
+                  <span>Robust bot framework with slash commands</span>
+                </li>
+                <li>
+                  <strong>Webhook Personas</strong>
+                  <span>Each agent appears as unique Discord user</span>
+                </li>
+                <li>
+                  <strong>Knowledge Access System</strong>
+                  <span>SimpleKnowledgeAccess with sector mapping</span>
+                </li>
+                <li>
+                  <strong>Session Management</strong>
+                  <span>Persistent conversations with context retention</span>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>📊 Performance Metrics</h3>
+              <div style="background: white; padding: 2rem; border-radius: 10px; border: 2px solid #e8f4f8;">
+                <div class="stats-grid" style="grid-template-columns: 1fr 1fr;">
+                  <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #667eea;">90%</div>
+                    <div style="font-size: 0.9rem; color: #5d6d7e;">Test Success Rate</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #43cea2;">27/30</div>
+                    <div style="font-size: 0.9rem; color: #5d6d7e;">Tests Passed</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #f39c12;">5</div>
+                    <div style="font-size: 0.9rem; color: #5d6d7e;">2025 Knowledge Files</div>
+                  </div>
+                  <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: #e74c3c;">100%</div>
+                    <div style="font-size: 0.9rem; color: #5d6d7e;">Authority Level</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 3rem;">
+            <h3>🔗 Bot Invitation</h3>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+              <code style="font-size: 0.8rem; word-break: break-all;">
+                https://discord.com/api/oauth2/authorize?client_id=1386968477440671744&permissions=2684733440&scope=bot%20applications.commands
+              </code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 13: Impact & Value -->
+      <section>
+        <div class="wrap aligncenter">
+          <h2>Impact & Value Proposition</h2>
+          <div class="grid vertical-align">
+            <div class="column">
+              <div class="feature-highlight">
+                <h3>🎯 For Companies</h3>
+                <ul style="text-align: left;">
+                  <li>Expert SBTi guidance accessible 24/7</li>
+                  <li>Sector-specific implementation roadmaps</li>
+                  <li>Latest 2025 standards and validation process</li>
+                  <li>Peer benchmarking and best practices</li>
+                  <li>Cost analysis and ROI modeling</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div style="background: white; border: 2px solid #e8f4f8; padding: 2rem; border-radius: 10px;">
+                <h3>📈 For SBTi Ecosystem</h3>
+                <ul>
+                  <li>Democratized access to expert knowledge</li>
+                  <li>Reduced barrier to entry for SMEs</li>
+                  <li>Consistent guidance across sectors</li>
+                  <li>Real-time integration of latest standards</li>
+                  <li>Scalable consultation platform</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 3rem;">
+            <h3>🌍 Transforming SBTi Compliance</h3>
+            <p class="text-intro">
+              From complex documentation to interactive, expert-guided consultation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 14: Future Roadmap -->
+      <section class="bg-gradient-blue">
+        <div class="wrap aligncenter">
+          <h2 style="color: white;">Future Development Roadmap</h2>
+          
+          <div class="bg-white shadow" style="padding: 3rem; border-radius: 15px; margin-top: 2rem;">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h3>🔄 Phase 2: Advanced Features</h3>
+                <ul>
+                  <li>Vector embeddings with ChromaDB</li>
+                  <li>Real-time SBTi website monitoring</li>
+                  <li>Knowledge graph visualization</li>
+                  <li>Automated quality scoring</li>
+                </ul>
+                
+                <h3>🚀 Phase 3: Innovation</h3>
+                <ul>
+                  <li>Multi-language knowledge support</li>
+                  <li>Knowledge conflict resolution</li>
+                  <li>Agent collaboration workflows</li>
+                  <li>Predictive knowledge recommendations</li>
+                </ul>
+              </div>
+              <div class="column">
+                <div class="feature-highlight">
+                  <h3>🎯 Immediate Priorities</h3>
+                  <p><strong>Q3 2025</strong><br>
+                  Monitor automotive sector consultation closure</p>
+                  <p><strong>Q4 2025</strong><br>
+                  Integrate finalized power sector standard</p>
+                  <p><strong>2026</strong><br>
+                  Implement Net-Zero Standard V2.0 final version</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                  <h4>Continuous Evolution</h4>
+                  <p>Automated integration of new SBTi guidance as released</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 15: Call to Action -->
+      <section class="bg-light">
+        <div class="wrap aligncenter">
+          <h2>Experience the Future of SBTi Consultation</h2>
+          <p class="text-intro">
+            19 AI experts ready to guide your sustainability journey
+          </p>
+          
+          <div style="margin: 3rem 0;">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Expert Availability</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">13</span>
+                <span class="stat-label">Sector Specializations</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">2025</span>
+                <span class="stat-label">Latest Standards</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Scalability</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="feature-highlight">
+            <h3>🚀 Get Started Today</h3>
+            <p><strong>Add the bot to your Discord server</strong></p>
+            <p>Start with <code>/sbti_start</code> for complete consultation</p>
+            <p>Or try <code>/sbti_qa topic:net zero</code> for 2025 updates</p>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <p><strong>Transform your SBTi compliance journey from documentation to conversation</strong></p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script src="static/js/webslides.js"></script>
+  <script>
+    window.ws = new WebSlides();
+  </script>
+
+</body>
+
+</html>
